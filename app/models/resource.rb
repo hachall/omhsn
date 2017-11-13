@@ -1,3 +1,3 @@
 class Resource < ApplicationRecord
-  has_many :users, through: :saved_resources
+  has_many :saved_resources
 end
