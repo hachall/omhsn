@@ -1,0 +1,2 @@
+class SavedResource < ApplicationRecord
+end
