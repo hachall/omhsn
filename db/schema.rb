@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171218171939) do
+ActiveRecord::Schema.define(version: 20171219122454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,9 +34,10 @@ ActiveRecord::Schema.define(version: 20171218171939) do
     t.text     "what_they_do"
     t.text     "about"
     t.text     "tip"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "taglines",     default: [],              array: true
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "taglines",           default: [],              array: true
+    t.string   "taglines_as_string"
   end
 
   create_table "saved_events", force: :cascade do |t|
