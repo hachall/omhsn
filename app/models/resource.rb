@@ -2,6 +2,7 @@ class Resource < ApplicationRecord
   has_many :saved_resources
 
   after_validation :taglines_into_array
+  after_validation :contacts_into_array
 
 
 
@@ -13,6 +14,11 @@ class Resource < ApplicationRecord
   def taglines_into_array
     if self.taglines_as_string
       self.taglines = self.taglines_as_string.split(' ')
+    end
+  end
+  def contacts_into_array
+    if self.contacts_as_string
+      self.contacts = self.contacts_as_string.split(';')
     end
   end
 end
