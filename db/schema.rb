@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220160813) do
+ActiveRecord::Schema.define(version: 20171220164945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20171220160813) do
     t.string   "taglines",           default: [],              array: true
     t.string   "taglines_as_string"
     t.string   "photo"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "saved_events", force: :cascade do |t|
