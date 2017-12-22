@@ -41,9 +41,8 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
-    puts "hey 1"
+    @resource = Resource.find(params[:id])
     @resource.destroy
-    puts "hey"
     redirect_to resources_path
   end
 

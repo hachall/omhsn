@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.where.not(latitude: nil, longitude: nil)
-    @markers = @events.map do |resource|
+    @markers = @events.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude
@@ -41,6 +41,7 @@ class EventsController < ApplicationController
   end
 
   def destroy
+    @event = Event.find(params[:id])
     @event.destroy
     redirect_to events_path
   end
