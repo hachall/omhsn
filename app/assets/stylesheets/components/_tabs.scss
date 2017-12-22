@@ -1,0 +1,56 @@
+// BASE for Tabs
+.tab-base {
+  display: flex;
+  padding: 6px 10px 0 10px;
+  height: 60px;
+  font-size: 14px;
+  width: 100%;
+  list-style: none;
+}
+
+// Tabs for Profile Page
+.profile-tabs {
+  a {
+  color: gray;
+  text-decoration: none;
+  }
+
+  a:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #4CCADB;
+  background: none;
+  }
+
+  h3 {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 0;
+  }
+
+  p {
+  opacity: 0.5;
+  margin-bottom: 0;
+  }
+}
+
+// Active Tab styles
+.atab {
+  flex: 0 0 25%;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+
+}
+
+.atab.active {
+  color: #4CCADB;
+  border: 1px solid #ddd;
+  border-top: 2px solid #4CCADB;
+  border-bottom: 1px solid #fff;
+}
+
+.tab-content {
+  width: 90% !important;
+  margin: 30px auto;
+}

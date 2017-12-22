@@ -5,9 +5,8 @@ class Resource < ApplicationRecord
   validates :category, inclusion: {in: CATEGORIES }
 
   after_validation :taglines_into_array
-
+  
   mount_uploader :photo, PhotoUploader
-
 
   geocoded_by :address
   after_validation :geocode

@@ -2,11 +2,20 @@ class ResourcesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @resources = Resource.search(params[:query])
+    # @resources = Resource.search(params[:query])
+
+    @resources = Resource.where.not(latitude: nil, longitude: nil)
+    @markers = @resources.map do |resource|
+      {
+        lat: resource.latitude,
+        lng: resource.longitude
+      }
+    end
   end
 
   def show
     @resource = Resource.find(params[:id])
+    @resource_coordinates = [{ lat: @resource.latitude, lng: @resource.longitude }]
   end
 
   def new
@@ -34,7 +43,9 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
-    @event.destroy
+    puts "hey 1"
+    @resource.destroy
+    puts "hey"
     redirect_to resources_path
   end
 
@@ -42,7 +53,7 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resource).permit(:name, :website, :address, :phone_number, :email, :what_they_do, :about, :tip, :taglines_as_string, :photo)
+    params.require(:resource).permit(:name, :website, :address, :phone_number, :email, :what_they_do, :about, :tip, :taglines_as_string, :photo, :photo_cache)
   end
 
 end
