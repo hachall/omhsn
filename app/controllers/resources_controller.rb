@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update]
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
     @resources = Resource.all
@@ -31,6 +31,11 @@ class ResourcesController < ApplicationController
     @resource = Resource.find(params[:id])
     @resource.update(resource_params)
     redirect_to resource_path(@resource)
+  end
+
+  def destroy
+    @event.destroy
+    redirect_to resources_path
   end
 
 
