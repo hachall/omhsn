@@ -21,6 +21,14 @@
         </div>
       </div>
     </div>
+    <div class="edit-delete-showpage-resource">
+      <%= link_to resource_path(@resource), method: :delete do  %>
+        <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to edit_resource_path(@resource) do  %>
+        <i class="fa admin-fa fa-pencil-square-o icon-showpage" aria-hidden="true"></i>
+      <% end %>
+    </div>
   </div>
   <div class="text-showpage">
     <div>

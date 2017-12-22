@@ -41,7 +41,9 @@ class ResourcesController < ApplicationController
   end
 
   def destroy
-    @event.destroy
+    puts "hey 1"
+    @resource.destroy
+    puts "hey"
     redirect_to resources_path
   end
 
