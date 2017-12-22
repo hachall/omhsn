@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="resource-details">
+    <div class="photo-showpage" style="background-image: url('restore-logo.jpeg')">
+    </div>
+    <div>
+      <h1><%= @resource.name %></h1>
+      <div class="website">
+        <h5>Website</h5>
+        <p><%= @resource.website %></p>
+      </div>
+      <div class="address">
+        <h5>Address</h5>
+        <p><%= @resource.address %></p>
+      </div>
+      <div class="contact">
+        <h5>Contact</h5>
+        <p><%= @resource.phone_number %></p>
+        <p><%= @resource.email %></p>
+      </div>
+    </div>
+
+  </div>
+  <div>
+    <h4>About</h4>
+    <p><%= @resource.about  %></p>
+  </div>
+  <div>
+    <h4>What They Do</h4>
+    <p><%= @resource.what_they_do  %></p>
+  </div>
+  <div>
+    <h4>OMHSN Tip</h4>
+    <p><%= @resource.tip %></p>
+  </div>
+
+</div>
