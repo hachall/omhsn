@@ -1,1 +1,73 @@
-// Specific CSS for your home-page
+.big-logo-home {
+  height: 350px;
+  margin: 30px 50px;
+
+}
+
+.banner {
+  justify-content: center;
+}
+
+.homepage-description{
+  justify-content: center;
+}
+
+#title-homepage {
+  color: #4CCADB;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  font-size: 45px;
+}
+
+.search-homepage {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+
+}
+
+.search-button{
+  border-radius: 2px;
+  background-color: #4CCADB;
+  border: 1px solid #00C1DB;
+}
+
+.input-homepage {
+  width: 500px !important;
+}
+
+.search-button {
+  height: 39px;
+}
+
+.homepage-titles{
+  font-size: 30px;
+  color: #4CCADB;
+  margin-bottom: 70px;
+}
+
+.category-photo {
+  width: 200px;
+  height: 200px;
+  margin-left: 30px;
+}
+
+.category-card {
+  width: 200px;
+  height: 200px;
+  margin-right: 0px !important;
+  margin-bottom: 10px;
+}
+
+.category {
+  margin-bottom: 20px;
+}
+.category-title {
+  font-size: 15px;
+  margin-left: 30px !important;
+  margin-top: 5px;
+}
+
+.empty {
+  height: 300px;
+}
