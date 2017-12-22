@@ -6,10 +6,17 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :events, only: [:index, :destroy, :show, :edit, :update, :new, :create]
-  resources :resources, only: [:index, :destroy, :show, :edit, :new, :update, :create]
+
+  resources :events, only: [:index, :destroy, :show, :edit, :update, :new, :create] do
+    resources :saved_events, only: [:create]
+  end
 
 
+  resources :resources, only: [:index, :destroy, :show, :edit,  :new, :update, :create] do
+    resources :saved_resources, only: [:create]
+  end
+  resources :saved_events, only: [:destroy]
+  resources :saved_resources, only: [:destroy]
 end
 
 

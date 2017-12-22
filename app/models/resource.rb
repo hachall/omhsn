@@ -1,6 +1,7 @@
 class Resource < ApplicationRecord
   has_many :saved_resources
 
+
   #after_validation :taglines_into_array
   geocoded_by :address
   mount_uploader :photo, PhotoUploader
