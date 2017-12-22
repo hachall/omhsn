@@ -2,7 +2,7 @@ class ResourcesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @resources = Resource.all
+    @resources = Resource.search(params[:query])
   end
 
   def show
