@@ -1,2 +1,79 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3 banner">
+      <%= image_tag "logo.jpeg", class: "big-logo-home" %>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2 homepage-description">
+      <h1 id="title-homepage" class="text-center">OXFORD MENTAL HEALTH SUPPORT NETWORK</h1>
+      <p class="text-center">Helping you find the mental health resources you need.</p>
+      <form action="/resources" method="get" class="flex-form form-inline search-homepage">
+        <input type="text" name="query" class="form-control input-homepage text-center" style="vertical-align: baseline" placeholder="What are you looking for?">
+        <button type="submit" class="search-button">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <h3 class="text-center homepage-titles">Browse by top categories</h3>
+  <div class="row">
+    <div class="col-xs-12 col-sm-3 category">
+      <div class="category-card">
+        <%= image_tag "national_health_service.jpg", class: "category-photo" %>
+      </div>
+      <h4 class="category title text-center">National Health Service</h4>
+    </div>
+    <div class="col-xs-12 col-sm-3 category">
+      <div class="category-card">
+        <%= image_tag "peer_support_groups.png", class: "category-photo" %>
+      </div>
+      <h4 class="category title text-center">Peer Support Groups</h4>
+    </div>
+    <div class="col-xs-12 col-sm-3 category">
+      <div class="category-card">
+        <%= image_tag "self_help_and_apps.png", class: "category-photo" %>
+      </div>
+      <h4 class="category title text-center">Self-Help and Apps</h4>
+    </div>
+    <div class="col-xs-12 col-sm-3 category">
+      <div class="category-card">
+        <%= image_tag "helplines.png", class: "category-photo" %>
+      </div>
+      <h4 class="category title text-center">Helplines</h4>
+    </div>
+    <div class="col-xs-12 col-sm-3 category">
+      <div class="category-card">
+        <%= image_tag "students.png", class: "category-photo" %>
+      </div>
+      <h4 class="category title text-center">Students</h4>
+    </div>
+    <div class="col-xs-12 col-sm-3 category">
+      <div class="category-card">
+        <%= image_tag "support_services.png", class: "category-photo" %>
+      </div>
+      <h4 class="category title text-center">Support Services</h4>
+    </div>
+    <div class="col-xs-12 col-sm-3 category">
+      <div class="category-card">
+        <%= image_tag "private_medical_services.png", class: "category-photo" %>
+      </div>
+      <h4 class="category title text-center">Private Medical Services</h4>
+    </div>
+    <div class="col-xs-12 col-sm-3 category">
+      <div class="category-card">
+        <%= image_tag "emergency_icon.png.jpeg", class: "category-photo" %>
+      </div>
+      <h4 class="category title text-center">Emergency</h4>
+    </div>
+  </div>
+  <h3 class="text-center homepage-titles">Events in Oxford near you</h3>
+  <div class="empty">
+
+  </div>
+
+</div>
+
