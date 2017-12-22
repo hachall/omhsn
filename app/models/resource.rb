@@ -11,6 +11,15 @@ class Resource < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
 
+  include AlgoliaSearch
+
+  algoliasearch do
+    attribute :taglines_as_string, :what_they_do. :about
+
+    searchableAttributes ['taglines_as_string', 'what_they_do', 'about']
+
+  end
+
   def taglines_into_array
     if self.taglines_as_string
       self.taglines = self.taglines_as_string.split(' ')
