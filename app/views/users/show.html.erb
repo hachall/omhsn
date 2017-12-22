@@ -1,34 +1,37 @@
-<div class="container">
-  <ul class="tab-base profile-tabs" role="tablist">
-    <li role="presentation" class="atab active"><a href="#following" aria-controls="following" role="tab" data-toggle="tab">Saved Resources</a></li>
-    <li role="presentation" class="atab"><a href="#booked" aria-controls="booked" role="tab" data-toggle="tab">Saved Events</a></li>
-  </ul>
+<div class="container profile-container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <ul class="tab-base profile-tabs" role="tablist">
+        <li role="presentation" class="atab active"><a href="#resource" aria-controls="resource" role="tab" data-toggle="tab">Saved Resources</a></li>
+        <li role="presentation" class="atab"><a href="#event" aria-controls="event" role="tab" data-toggle="tab">Saved Events</a></li>
+      </ul>
 
 
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="following">
-    <% if @followed_venues.empty? %>
-        <h4 class="text-center"> No followed venues yet!</h4>
-        <p class="text-center"> <%= image_tag("venue.png") %> </p>
-      <% else %>
-      <% @user.followed_venues.each do |venue| %>
-        <% url = venue.photo %>
-            <div class="row">
-              <div class="col-xs-12">
-                <div class="sqcard sqcard-index" style="background-image: linear-gradient(rgba(50,50,50,0.2), rgba(50,50,50,0.1)), url('<%= cl_image_path url %>')";>
-                  <div class="sqcard-category"><%= venue.name %></div>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="resource">
+          <% if @saved_resources.empty? %>
+              <h4 class="text-center"> No saved resources yet!</h4>
+              <p class="text-center"> <%= image_tag("venue.png") %> </p>
+            <% else %>
+            <% @user.saved_resources.each do |resource| %>
+              <%= resource.name %>
+            <% end %>
+          <% end %>
+        </div>
 
-                  <div class="sqcard-description">
-                    <p class="sqcard-date"><%= venue.open_time.strftime("%H:%M") %> - <%= venue.closing_time.strftime("%H:%M") %> </p>
-                    <h2 class="sqcard-title"><%= venue.name.capitalize %></h2>
-                    <p class="sqcard-location">Very cool city, the best</p>
-                  </div>
-                  <%= link_to "", venue_path(venue), class: 'sqcard-link' %>
-                </div>
-              </div>
-            </div>
-      <% end %>
-    <% end %>
+        <div role="tabpanel" class="tab-pane" id="event">
+          <% if @saved_events.empty? %>
+            <h4 class="text-center"> No Saved Events...time to add some!</h4>
+            <p class="text-center"> <%= image_tag("book-event.png") %> </p>
+          <% else %>
+            <% @saved_events.each do |event| %>
+              <%= event.name %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 
