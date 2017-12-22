@@ -1,1 +1,2 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Hamish Hall and Liliane Momeni are building the Oxford Mental Health Support Network website to provide mental health resources to students! Enjoy!
+

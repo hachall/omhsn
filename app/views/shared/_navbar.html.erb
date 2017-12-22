@@ -10,11 +10,13 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Resources", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Events", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Gallery", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "About", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Profile", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Add Resource", new_resource_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Add Event", new_event_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Resources", resources_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Events", events_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "About", about_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Profile", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
 
     <% else %>
