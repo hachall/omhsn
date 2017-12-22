@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+Resource.destroy_all
 
 resource = Resource.new
 resource.name = "The Oxford Counselling And Psychotherapy Service"
