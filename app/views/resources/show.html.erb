@@ -1,6 +1,12 @@
 <div class="container">
   <div class="row">
+    <% if current_user.saved?(@resource)  %>
+      <%= link_to 'Unsave', saved_resource_path(current_user.save_resource(@resource)), method: :delete, class: 'btn btn-primary btn-positioning' %>
+    <% else  %>
+      <%= link_to 'Save', resource_saved_resources_path(@resource), method: :post, class: 'btn btn-primary btn-positioning' %>
+    <% end %>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
       <div class="resource-details">
         <div class="photo-showpage" style="background-image: url('<%= cl_image_path @resource.photo %>')">
         </div>

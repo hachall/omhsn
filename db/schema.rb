@@ -10,81 +10,79 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20171222184127) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: :cascade do |t|
-    t.string   "name"
-    t.string   "photo_url"
-    t.text     "description"
+  create_table "events", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "photo_url"
+    t.text "description"
     t.datetime "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "address"
-    t.string   "photo"
-  end
-
-  create_table "resources", force: :cascade do |t|
-    t.string   "name"
-    t.string   "photo_url"
-    t.string   "website"
-    t.string   "address"
-    t.string   "phone_number"
-    t.string   "email"
-    t.text     "what_they_do"
-    t.text     "about"
-    t.text     "tip"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "taglines",           default: [],              array: true
-    t.string   "taglines_as_string"
-    t.string   "photo"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.string   "contacts",           default: [],              array: true
-    t.string   "contacts_as_string"
-    t.string   "category"
-  end
-
-  create_table "saved_events", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_saved_events_on_event_id", using: :btree
-    t.index ["user_id"], name: "index_saved_events_on_user_id", using: :btree
+    t.float "latitude"
+    t.float "longitude"
+    t.string "address"
+    t.string "photo"
   end
 
-  create_table "saved_resources", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "resource_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["resource_id"], name: "index_saved_resources_on_resource_id", using: :btree
-    t.index ["user_id"], name: "index_saved_resources_on_user_id", using: :btree
+  create_table "resources", id: :serial, force: :cascade do |t|
+    t.string "name"
+    t.string "photo_url"
+    t.string "website"
+    t.string "address"
+    t.string "phone_number"
+    t.string "email"
+    t.text "what_they_do"
+    t.text "about"
+    t.text "tip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "taglines", default: [], array: true
+    t.string "taglines_as_string"
+    t.string "photo"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "contacts", default: [], array: true
+    t.string "contacts_as_string"
+    t.string "category"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "saved_events", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_saved_events_on_event_id"
+    t.index ["user_id"], name: "index_saved_events_on_user_id"
+  end
+
+  create_table "saved_resources", id: :serial, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "resource_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resource_id"], name: "index_saved_resources_on_resource_id"
+    t.index ["user_id"], name: "index_saved_resources_on_user_id"
+  end
+
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "saved_events", "events"
