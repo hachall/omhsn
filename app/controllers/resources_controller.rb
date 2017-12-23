@@ -20,6 +20,7 @@ class ResourcesController < ApplicationController
   end
 
   def new
+    @categories = ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Medical Practices', 'Emergency']
     @resource = Resource.new
   end
 

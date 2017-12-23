@@ -1,3 +1,4 @@
+
 <div class="container form-center">
   <%= simple_form_for(@resource) do |f| %>
     <%= f.input :name %>
@@ -6,7 +7,7 @@
     <%= f.input :phone_number %>
     <%= f.input :email %>
     <%= f.input :what_they_do %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: [ @categories ] %>
     <%= f.input :about %>
     <%= f.input :tip %>
     <%= f.input :taglines_as_string %>
