@@ -1,15 +1,14 @@
 source 'https://rubygems.org'
 ruby '2.3.4'
 
-
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
-gem 'rails', '5.0.5'
+gem 'rails', '5.1'
 gem 'redis'
-
+gem 'webpacker', '~> 3.0'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
@@ -21,7 +20,7 @@ gem 'uglifier'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 
-gem "geocoder"
+gem 'geocoder'
 
 gem "algoliasearch-rails"
 

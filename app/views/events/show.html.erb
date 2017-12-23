@@ -17,6 +17,14 @@
         </div>
       </div>
     </div>
+    <div class="edit-delete-showpage-resource">
+      <%= link_to event_path(@event), method: :delete do  %>
+        <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to edit_event_path(@event) do  %>
+        <i class="fa admin-fa fa-pencil-square-o icon-showpage" aria-hidden="true"></i>
+      <% end %>
+    </div>
   </div>
   <div class="text-showpage">
     <div>
@@ -25,31 +33,25 @@
     </div>
   </div>
 
-  <div id="map" class="show-map" style="width: 100%; height: 400px;">
+  <div id="map" class="show-map" style="width: 100%; height: 400px;" data-markers="<%= @event_coordinates.to_json %>">
   </div>
-
-  <%= content_for(:after_js) do %>
-    <script>
-      var styles = [{featureType:"administrative.country",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"landscape.man_made",elementType:"all",stylers:[{visibility:"on"},{hue:"#00ffde"}]},{featureType:"landscape.man_made",elementType:"geometry",stylers:[{visibility:"off"}]},{featureType:"landscape.man_made",elementType:"geometry.fill",stylers:[{visibility:"on"}]},{featureType:"landscape.man_made",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"landscape.natural",elementType:"geometry.fill",stylers:[{visibility:"off"},{color:"#e0efef"}]},{featureType:"landscape.natural.terrain",elementType:"geometry.fill",stylers:[{visibility:"off"}]},{featureType:"poi",elementType:"all",stylers:[{visibility:"off"},{saturation:"-100"},{lightness:"-100"}]},{featureType:"poi",elementType:"geometry.fill",stylers:[{visibility:"on"},{hue:"#1900ff"},{color:"#c0e8e8"}]},{featureType:"poi",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.attraction",elementType:"all",stylers:[{visibility:"off"}]},{featureType:"road",elementType:"all",stylers:[{lightness:"68"}]},{featureType:"road",elementType:"geometry",stylers:[{lightness:100},{visibility:"simplified"}]},{featureType:"road",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"transit",elementType:"all",stylers:[{visibility:"on"},{lightness:"32"},{hue:"#00ff7a"}]},{featureType:"transit.line",elementType:"geometry",stylers:[{visibility:"on"},{lightness:700}]},{featureType:"water",elementType:"all",stylers:[{color:"#7dcdcd"}]},{featureType:"water",elementType:"geometry.fill",stylers:[{color:"##000000"}]}];
-      $(document).ready(function() {
-        var handler = Gmaps.build('Google');
-        handler.buildMap({
-          internal: { id: 'map' },
-          provider: { styles: styles }
-        },
-        function() {
-          markers = handler.addMarkers(<%= raw @event_coordinates.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          if (markers.length == 0) {
-            handler.getMap().setZoom(2);
-          }
-          else if (markers.length == 1) {
-            handler.getMap().setZoom(14);
-          }
-        });
-      });
-    </script>
-  <% end %>
-
 </div>
+
+<%= content_for :after_js do %>
+  <%= javascript_pack_tag 'map' %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
