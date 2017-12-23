@@ -6,7 +6,7 @@ class SavedResourcesController < ApplicationController
     @user = current_user
     saved_resource.user = @user
     saved_resource.save
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
@@ -14,7 +14,7 @@ class SavedResourcesController < ApplicationController
     @user = current_user
     @resource = saved_resource.resource
     saved_resource&.destroy
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 
 end

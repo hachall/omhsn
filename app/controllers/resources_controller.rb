@@ -13,6 +13,7 @@ class ResourcesController < ApplicationController
 
   def show
     @resource = Resource.find(params[:id])
+    @saved_resource = SavedResource.new
     @resource_coordinates = [{ lat: @resource.latitude, lng: @resource.longitude }]
   end
 
