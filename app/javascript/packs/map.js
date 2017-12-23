@@ -1,4 +1,7 @@
+console.log('hello from map pack');
+
 import GMaps from 'gmaps/gmaps.js';
+// this is for map stuff required only on specific pages (purpose of the differente packs)
 const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
@@ -12,3 +15,4 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   } else {
     map.fitLatLngBounds(markers);
   }
+}
