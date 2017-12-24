@@ -6,6 +6,10 @@
   margin-right: 25px;
 }
 
+.padded-row {
+  padding-top: 20px;
+}
+
 
 .resource-details {
   display: flex;
@@ -16,9 +20,9 @@
 }
 
 .btn-positioning {
-  position: absolute;
-  left: 250px;
-  bottom: 300px;
+  // position: absolute;
+  // left: 240px;
+  // top: 135px;
   background-color: #4CCADB;
   border: 0.5px solid #10a5b9;
   &:hover {

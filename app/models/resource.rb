@@ -1,11 +1,11 @@
 class Resource < ApplicationRecord
   has_many :saved_resources
 
-  CATEGORIES = ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Medical Practices', 'Emergency']
-  validates :category, inclusion: {in: CATEGORIES }
+  #CATEGORIES = ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Medical Practices', 'Emergency']
+  #validates :category, inclusion: {in: CATEGORIES }
 
   after_validation :taglines_into_array
-  
+
   mount_uploader :photo, PhotoUploader
 
   geocoded_by :address
