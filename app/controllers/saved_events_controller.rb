@@ -6,15 +6,16 @@ class SavedEventsController < ApplicationController
     @user = current_user
     saved_event.user = @user
     saved_event.save
-    redirect_to :back
+    redirect_to event_path(@event)
   end
 
   def destroy
     saved_event = SavedEvent.find(params[:id])
-    @user = current_user
     @event = saved_event.event
     saved_event&.destroy
-    redirect_to :back
+    redirect_to event_path(@event)
   end
 
 end
+
+
