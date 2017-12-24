@@ -14,6 +14,6 @@ class User < ApplicationRecord
   end
 
   def saved?(resource)
-    saved_resources.include? resource
+    saved_resources.pluck(:resource_id).include? resource.id
   end
 end

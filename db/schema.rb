@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171222184127) do
+ActiveRecord::Schema.define(version: 20171223151737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20171222184127) do
     t.string "contacts", default: [], array: true
     t.string "contacts_as_string"
     t.string "category"
+    t.string "card_description"
   end
 
   create_table "saved_events", id: :serial, force: :cascade do |t|

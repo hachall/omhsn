@@ -16,8 +16,8 @@
                   <h4 class="text-center"> No saved resources yet!</h4>
                   <p class="text-center"> <%= image_tag("venue.png") %> </p>
                 <% else %>
-                <% @user.saved_resources.each do |sr| %>
-                  <%= sr.resource.name %>
+                <% @saved_resources.each do |sr| %>
+                  <%= render 'shared/card_resource', resource: sr.resource %>
                 <% end %>
               <% end %>
             </div>

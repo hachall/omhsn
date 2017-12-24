@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Resource.destroy_all
+SavedResource.destroy_all
 
 resource = Resource.new
 resource.name = "Carers Oxfordshire"
