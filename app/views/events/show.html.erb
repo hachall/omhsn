@@ -1,5 +1,22 @@
 <div class="container">
   <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 padded-row">
+      <% if current_user.saved_event?(@event) %>
+        <%= link_to 'Unsave', saved_event_path(current_user.save_event(@event)), method: :delete, class: 'btn btn-primary btn-positioning' %>
+      <% else  %>
+        <%= link_to 'Save', event_saved_events_path(@event), method: :post, class: 'btn btn-primary btn-positioning' %>
+      <% end %>
+      <div class="edit-delete-showpage-resource pull-right">
+        <%= link_to event_path(@event), method: :delete do  %>
+          <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to edit_event_path(@event) do  %>
+          <i class="fa admin-fa fa-pencil-square-o icon-showpage" aria-hidden="true"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <div class="resource-details">
         <div class="photo-showpage" style="background-image: url('<%= cl_image_path @event.photo %>')">
@@ -17,24 +34,18 @@
         </div>
       </div>
     </div>
-    <div class="edit-delete-showpage-resource">
-      <%= link_to event_path(@event), method: :delete do  %>
-        <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
-      <% end %>
-      <%= link_to edit_event_path(@event) do  %>
-        <i class="fa admin-fa fa-pencil-square-o icon-showpage" aria-hidden="true"></i>
-      <% end %>
-    </div>
   </div>
   <div class="text-showpage">
-    <div>
-      <h4 class="bold">Description</h4>
-      <p class="content-space"><%= @event.description  %></p>
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <h4 class="bold">Description</h4>
+        <p class="content-space"><%= @event.description  %></p>
+      </div>
+      <div id="map" class="show-map" style="width: 100%; height: 400px;" data-markers="<%= @event_coordinates.to_json %>">
+      </div>
     </div>
   </div>
 
-  <div id="map" class="show-map" style="width: 100%; height: 400px;" data-markers="<%= @event_coordinates.to_json %>">
-  </div>
 </div>
 
 <%= content_for :after_js do %>

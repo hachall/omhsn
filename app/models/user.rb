@@ -13,7 +13,15 @@ class User < ApplicationRecord
     saved_resources.find { |sr| sr.resource == resource }
   end
 
-  def saved?(resource)
-    saved_resources.include? resource
+  def saved_resource?(resource)
+    saved_resources.pluck(:resource_id).include? resource.id
+  end
+
+  def save_event(event)
+    saved_events.find { |se| se.event == event }
+  end
+
+  def saved_event?(event)
+    saved_events.pluck(:event_id).include? event.id
   end
 end

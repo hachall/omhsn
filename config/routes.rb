@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get "/contact", to: 'pages#contact'
   get "/about", to: 'pages#about'
 
-  resources :users, only: [:show]
+  # resources :users, only: [:show]
+  get '/dashboard', to: 'users#dashboard'
 
 
   resources :events, only: [:index, :destroy, :show, :edit, :update, :new, :create] do
