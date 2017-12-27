@@ -21,7 +21,7 @@ A network of peer support groups (find your nearest here)
 Training and wellbeing opportunities"
 resource.tip = "Found out about a carers support group or event? Send it in and they'll put it on their online calendar to share with other carers!"
 resource.website = "http://www.carersoxfordshire.org/uk/cms/"
-resouce.address = "Support groups take place at a variety of locations. Find your nearest here."
+resource.address = "Support groups take place at a variety of locations. Find your nearest here."
 resource.contacts_as_string = "0345 050 7666"
 resource.email = "carersoxfordshire@oxfordshire.gov.uk"
 resource.photo_url = "logo_knuagr.gif"
