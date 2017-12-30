@@ -2,14 +2,27 @@ class ResourcesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
-    @resources = Resource.search(params[:query])
+    @resources = Resource.all
+    #then add algolia when you have permission
 
     # @resources = Resource.where.not(latitude: nil, longitude: nil)
-    @markers = @resources.map do |resource|
-      if resource.latitude && resource.latitude
+    #@markers = @resources.map do |resource|
+      #if resource.latitude && resource.latitude
+       # {
+       #   lat: resource.latitude,
+       #   lng: resource.longitude
+       # }
+      #end
+   # end
+
+    @coordinate_hash = @resources.map do |resource|
+      if resource.latitude && resource.longitude
         {
           lat: resource.latitude,
-          lng: resource.longitude
+          lng: resource.longitude,
+          name: resource.name,
+          infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource}),
+          card: render_to_string(partial: "shared/card_resource", locals: {resource: resource})
         }
       end
     end

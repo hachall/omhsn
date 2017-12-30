@@ -1,6 +1,29 @@
-<div
-  id="map"="
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="left">
+        <form action="/resources" method="get" class="flex-form form-inline search-homepage">
+          <input type="text" name="query" class="form-control input-homepage text-center" style="vertical-align: baseline" placeholder="What are you looking for?">
+          <button type="submit" class="search-button">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+
+        <% if @resources.empty? %>
+          <p class="no-events text-center">Sorry, there are no resources in this category...</p>
+        <% else %>
+          <% @resources.each do |resource| %>
+            <%= render 'shared/card_resource', resource: resource %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div id="map" style="width: 100%; height: calc(100vh - 60px);" data-markers="<%= @markers.to_json %>"></div>
+    </div>
+  </div>
+</div>
+
+<%= content_for :after_js do %>
+  <%= javascript_pack_tag 'map' %>
+<% end %>
