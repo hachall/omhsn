@@ -1,0 +1,28 @@
+.photos-box {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.btn-box {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 40px;
+}
+
+.gallery-card {
+  height: 300px;
+  margin: 10px;
+  // cursor: pointer;
+}
+
+#addPhotoBtn {
+}
+
+
+#photo-modal {
+
+}
+
+.modal-body {
+  height: 80vh;
+  width: 60vh;
+}

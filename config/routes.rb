@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/contact", to: 'pages#contact'
   get "/about", to: 'pages#about'
+  # get "/gallery", to: 'photos#index'
 
   # resources :users, only: [:show]
   get '/dashboard', to: 'users#dashboard'
@@ -18,6 +19,10 @@ Rails.application.routes.draw do
   end
   resources :saved_events, only: [:destroy]
   resources :saved_resources, only: [:destroy]
+
+  resources :photos, only: [:index, :create]
+  get "/gallery", to: 'photos#index'
+
 end
 
 
