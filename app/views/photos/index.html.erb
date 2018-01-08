@@ -3,11 +3,10 @@
     <div class="row">
       <% @photos.each do |photo| %>
         <div class="col-xs-12 cl-sm-6 col-md-4">
-          <a data-toggle="modal" data-target="#photoModal<%=photo.id%>">
-            <div class="gallery-card" style="background-image: url('<%= cl_image_path photo.photo, crop: :fill %>')">
-              <!-- render modal here, pass photo -->
-            </div>
-          </a>
+            <a href=<%= photo.photo.url %> data-lightbox="gallery" data-title="<%= photo.description %>">
+              <div class="gallery-card" style="background-image: url('<%= cl_image_path photo.photo, crop: :fill %>')">
+              </div>
+            </a>
         </div>
       <% end %>
     </div>
