@@ -1,0 +1,16 @@
+<div id="photoModal<%=photo.id%>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <button type="button" class="close" data-dismiss="modal" data-target="#photoModal<%=photo.id%>">&times;</button>
+
+      <div class="modal-body" style="background-image: url('<%= cl_image_path photo.photo, crop: :fill %>')">
+      <p><%= photo.id %></p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
