@@ -1,10 +1,10 @@
 <div class="container">
   <div class="photos-box">
     <div class="row">
-      <% @photos.each do |photo| %>
+      <% @photos.reverse.each do |photo| %>
         <div class="col-xs-12 cl-sm-6 col-md-4">
             <a href=<%= photo.photo.url %> data-lightbox="gallery" data-title="<%= photo.description %>">
-              <div class="gallery-card" style="background-image: url('<%= cl_image_path photo.photo, crop: :fill %>')">
+              <div class="gallery-card" style="background-image: url('<%= cl_image_path photo.photo, :height => 300, crop: :scale %>')">
               </div>
             </a>
         </div>
@@ -13,7 +13,7 @@
   </div>
 
   <div class="btn-box">
-    <button type="button" class="btn btn-info btn-lg" id="addPhotoBtn" data-toggle="modal" data-target="#galleryModal">Add a Photo</button>
+    <button type="button" class="btn btn-primary btn-sm" id="addPhotoBtn" data-toggle="modal" data-target="#galleryModal">Add a Photo</button>
   </div>
 
 </div>

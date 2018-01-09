@@ -14,17 +14,11 @@
   &:hover {
     transform: scale(1.02);
   }
+  img {
+    height: 100%;
+  }
 }
 
 #addPhotoBtn {
 }
 
-
-#photo-modal {
-
-}
-
-.modal-body {
-  height: 80vh;
-  width: 60vh;
-}
