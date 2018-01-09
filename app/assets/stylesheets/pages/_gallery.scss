@@ -17,6 +17,21 @@
   img {
     height: 100%;
   }
+  // display: flex;
+  // position: absolute;
+  .edit-delete-photo {
+
+    position: relative;
+    top: 10px;
+    left: 10px;
+  }
+  .icon-photos {
+    color: white;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 #addPhotoBtn {

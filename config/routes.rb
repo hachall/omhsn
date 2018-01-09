@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :saved_events, only: [:destroy]
   resources :saved_resources, only: [:destroy]
 
-  resources :photos, only: [:index, :create]
+  resources :photos, only: [:index, :create, :destroy]
   get "/gallery", to: 'photos#index'
 
 end
