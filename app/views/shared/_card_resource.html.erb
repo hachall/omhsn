@@ -1,7 +1,8 @@
 
 <%= link_to resource_path(resource) do %>
   <div class="resource-card">
-    <div class="photo-resource-card" style="background-image: url('<%= cl_image_path resource.photo %>')">
+    <% url = resource.photo.nil? ? 'restore-logo.jpg' : resource.photo %>
+    <div class="photo-resource-card" style="background-image: url('<%= cl_image_path = url %>')">
     </div>
     <div class="resource-card-details">
       <h2 class="title-resource-card "><%= resource.name %></h2>

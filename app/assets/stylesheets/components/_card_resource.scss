@@ -7,6 +7,7 @@
   border: 0.5px solid rgba(0,0,0,0.1);
   padding: 25px 10px;
   border-radius: 2px;
+
 }
 
 .photo-resource-card {
@@ -21,10 +22,15 @@
   line-style: none;
   color: rgba(0,0,0,0.7);
   margin-top: 0px;
+
+  text-decoration: none !important;
+
 }
 
 .resource-card-details {
   flex: 1 1 400px;
+
+  text-decoration: none !important;
 }
 
 .content-resource-card {
