@@ -9,14 +9,17 @@
             <i class="fa fa-search"></i>
           </button>
         </form>
-
-        <% if @resources.empty? %>
-          <p class="no-events text-center">Sorry, there are no resources in this category...</p>
-        <% else %>
-          <% @resources.each do |resource| %>
-            <%= render 'shared/card_resource', resource: resource %>
+        <div id="list">
+          <% if @resources.empty? %>
+            <p class="no-events text-center">Sorry, there are no resources in this category...</p>
+          <% else %>
+            <% @resources.each do |resource| %>
+              <%= render 'shared/card_resource', resource: resource %>
+            <% end %>
           <% end %>
-        <% end %>
+
+        </div>
+
       </div>
     </div>
     <div class="col-xs-12 col-md-6">

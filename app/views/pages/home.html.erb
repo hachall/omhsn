@@ -77,14 +77,16 @@
       </div>
       <h4 class="category title text-center">Private Medical Services</h4>
     </div>
+
     <div class="col-xs-12 col-sm-3 category">
-      <div class="category-card">
-        <a href="resources?query=Emergency">
+      <%= link_to emergency_path do %>
+        <div class="category-card">
           <%= image_tag "emergency_icon.png.jpeg", class: "category-photo" %>
-        </a>
-      </div>
-      <h4 class="category title text-center">Emergency</h4>
+        </div>
+        <h4 class="category title text-center">Emergency</h4>
+      <% end %>
     </div>
+
   </div>
   <h3 class="text-center homepage-titles">Events in Oxford near you</h3>
   <div class="empty">
