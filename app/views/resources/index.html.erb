@@ -1,9 +1,10 @@
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-md-6">
       <div class="left">
-        <form action="/resources" method="get" class="flex-form form-inline search-homepage">
-          <input type="text" name="query" class="form-control input-homepage text-center" style="vertical-align: baseline" placeholder="What are you looking for?">
+        <form action="/resources" method="get" class="flex-form form-inline search-index">
+          <input type="text" name="query" class="form-control input-index text-center" style="vertical-align: baseline" placeholder="What are you looking for?">
           <button type="submit" class="search-button">
             <i class="fa fa-search"></i>
           </button>
@@ -19,7 +20,7 @@
       </div>
     </div>
     <div class="col-xs-12 col-md-6">
-      <div id="map" style="width: 100%; height: calc(100vh - 60px);" data-markers="<%= @coordinate_hash.to_json %>"></div>
+      <div id="map" style="width: 100%; height: calc(100vh - 60px);" data-markers="<%= @markers.to_json %>"></div>
     </div>
   </div>
 </div>

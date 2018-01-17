@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="photos-box">
+    <div class="row">
+      <% @photos.reverse.each do |photo| %>
+        <div class="col-xs-12 cl-sm-6 col-md-4">
+            <a href=<%= photo.photo.url %> data-lightbox="gallery" data-title="<%= photo.description %>">
+              <div class="gallery-card" style="background-image: url('<%= cl_image_path photo.photo, :height => 300, crop: :scale %>')">
+                <!-- <div class="edit-delete-photo">
+                  <%= link_to photo_path(photo), method: :delete do  %>
+                    <i class="fa admin-fa fa-trash-o icon-photos" aria-hidden="true"></i>
+                  <% end %>
+                </div> -->
+              </div>
+            </a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="btn-box">
+    <button type="button" class="btn btn-primary btn-sm" id="addPhotoBtn" data-toggle="modal" data-target="#galleryModal">Add a Photo</button>
+  </div>
+
+</div>
+
+<%= render "shared/upload_photo_modal", photo: @photo %>
