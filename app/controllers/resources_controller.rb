@@ -6,18 +6,18 @@ class ResourcesController < ApplicationController
       @resources = Resource.all.sort_by {|resource| resource.name}
     else
       @resources = Resource.search(params[:query])
-      # @resources = Resource.where.not(latitude: nil, longitude: nil)
       @markers = @resources.map do |resource|
         if resource.latitude && resource.latitude
           {
             lat: resource.latitude,
-            lng: resource.longitude
+            lng: resource.longitude,
+            name: resource.name,
+            infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource}),
+            card: render_to_string(partial: "shared/card_resource", locals: {resource: resource})
           }
         end
       end
-
     end
-
   end
 
   def show
