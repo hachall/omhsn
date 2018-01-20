@@ -19,6 +19,23 @@ class PhotosController < ApplicationController
     redirect_to photos_path
   end
 
+  def edit
+    # @photo = Photo.find(params[:id])
+  end
+
+  def update
+    @photo = Photo.find(params[:id])
+    @photo.update(photo_params)
+    redirect_to photos_path
+  end
+
+  def new_release
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   private
 
   def photo_params
