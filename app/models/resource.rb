@@ -5,6 +5,7 @@ class Resource < ApplicationRecord
   #validates :category, inclusion: {in: CATEGORIES }
 
   after_validation :taglines_into_array
+  after_validation :contacts_into_array
 
   mount_uploader :photo, PhotoUploader
 

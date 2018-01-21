@@ -22,6 +22,14 @@
 
     <% else %>
       <!-- Login link (when logged out) -->
+      <%= link_to "Add Resource", new_resource_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Add Event", new_event_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Resources", resources_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Events", events_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Gallery", photos_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "About", about_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Profile", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
