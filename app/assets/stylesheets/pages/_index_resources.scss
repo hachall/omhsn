@@ -1,4 +1,19 @@
-#map {
-  position: sticky !important;
+//#map {
+//  #position: sticky !important;
+ // top: 0px;
+//}
+
+.left-index {
+  overflow-y: auto !important;
+  height: calc(100vh - 70px);
+
 }
 
+.right-index {
+  padding-left: 0px;
+}
+
+
+#map {
+  margin-right: 10px;
+}

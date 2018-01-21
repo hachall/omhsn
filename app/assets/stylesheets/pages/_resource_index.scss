@@ -1,9 +1,18 @@
-.search-index {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  text-align: center;
+.index-search {
+  width: 100%;
+   padding: 10px;
 }
 
-.input-index {
-  width: 500px !important;
+.index-button {
+  width: 50px !important;
+  button {
+    width: 50px;
+  }
 }
+
+@media(max-width: 500px) {
+  .search-button {
+    width: 30px;
+  }
+}
+

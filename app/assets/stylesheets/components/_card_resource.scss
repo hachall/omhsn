@@ -3,18 +3,25 @@
   margin: 40px 10px;
   justify-content: space-between;
   text-align: center;
+  align-items: center;
   flex: 1 1 600px;
-  border: 0.5px solid rgba(0,0,0,0.1);
+  border: 0.5px solid #ccc;
   padding: 25px 10px;
   border-radius: 2px;
-
 }
+
+.card-resource-container a {
+  text-decoration: none;
+}
+
+
 
 .photo-resource-card {
   width: 310px;
   height: 220px;
   background-position: center;
   background-size: cover;
+  vertical-align: middle;
 }
 
 .title-resource-card {
@@ -29,12 +36,13 @@
 
 .resource-card-details {
   flex: 1 1 400px;
-
+  vertical-align: middle;
   text-decoration: none !important;
 }
 
 .content-resource-card {
-
+  color: #333333;
+  font-weight: lighter;
 }
 
 @media(max-width: 720px) {

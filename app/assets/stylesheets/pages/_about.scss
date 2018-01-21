@@ -15,6 +15,9 @@
 
 }
 
+.right-about {
+  padding-left: 50px;
+}
 .about-team li {
   list-style: none;
   list-style-type: none;
@@ -23,4 +26,10 @@
 
 .about-title {
   margin-top: 0px;
+}
+
+@media(max-width: 500px) {
+  .left-about {
+    padding: 0px;
+  }
 }
