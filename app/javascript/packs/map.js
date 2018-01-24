@@ -26,8 +26,171 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   } else {
     map.fitLatLngBounds(markers);
   }
-}
+  const styles = [
+    {
+        "featureType": "administrative.country",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.province",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.neighborhood",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#e0efef"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.landcover",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.terrain",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#30d9eb"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "hue": "#1900ff"
+            },
+            {
+                "color": "#c0e8e8"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "lightness": 100
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "hue": "#ff0000"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "lightness": 700
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#7dcdcd"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "saturation": "0"
+            },
+            {
+                "color": "#37d7e8"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "hue": "#ff0000"
+            }
+        ]
+    }
+]
+  map.addStyle({
+    styles: styles,
+    mapTypeId: 'map_style'
+  });
+  map.setStyle('map_style');
 
+}
 
 
 
