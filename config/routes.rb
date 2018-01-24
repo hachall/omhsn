@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/contact", to: 'pages#contact'
   get "/about", to: 'pages#about'
+  get "/emergency", to: 'pages#emergency'
+  get "/emergency/A", to: 'pages#emergency_A'
+  get "/emergency/B", to: 'pages#emergency_B'
   # get "/gallery", to: 'photos#index'
 
   # resources :users, only: [:show]

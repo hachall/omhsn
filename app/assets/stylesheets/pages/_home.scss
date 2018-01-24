@@ -3,9 +3,20 @@
   margin: 30px 50px;
 
 }
+.home-small-container {
+  width: 600px;
+  margin: auto;
+}
+
+.active-nav {
+  font-weight: bolder;
+}
 
 .banner {
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .homepage-description{
@@ -16,7 +27,7 @@
   color: #4CCADB;
   margin-top: 0px;
   margin-bottom: 30px;
-  font-size: 45px;
+  font-size: 50px;
 }
 
 .search-homepage {
@@ -33,7 +44,7 @@
 }
 
 .input-homepage {
-  width: 500px !important;
+  width: 90% !important;
 }
 
 .search-button {
@@ -45,29 +56,79 @@
   color: #4CCADB;
   margin-bottom: 70px;
 }
+.nhs {
+  background-image: url(national_health_service.jpg);
+}
+
+.psg {
+  background-image: url(peer_support_groups.png);
+}
+
+.self-help {
+  background-image: url(self_help_and_apps.png);
+}
+
+.helplines {
+  background-image: url(helplines.png);
+}
+
+.students {
+  background-image: url(students.png);
+}
+
+.services {
+  background-image: url(support_services.png);
+}
+
+.emergency-homepage {
+  background-image: url(emergency_icon.png.jpeg);
+}
+
+.medical {
+  background-image: url(private_medical_services.png);
+}
 
 .category-photo {
   width: 200px;
   height: 200px;
-  margin-left: 30px;
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
 }
+
 
 .category-card {
   width: 200px;
   height: 200px;
-  #margin-right: 0px !important;
-  #margin-bottom: 10px;
 }
 
 .category {
   margin-bottom: 20px;
 }
 .category-title {
-  font-size: 15px;
-  margin-left: 30px !important;
-  margin-top: 5px;
+  font-size: 18px;
+
 }
 
 .empty {
   height: 300px;
+}
+
+@media(max-width: 500px) {
+  .big-logo-home {
+    height: 220px;
+    margin: 30px 50px;
+  }
+  #title-homepage {
+    font-size: 30px;
+  }
+  .banner {
+    width: 400px;
+  }
+  .homepage-description p {
+    font-size: 15px;
+  }
+  .search-homepage {
+    width: 300px !important;
+  }
 }

@@ -1,31 +1,37 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-md-6">
-      <div class="left">
-        <form action="/resources" method="get" class="flex-form form-inline search-index">
-          <input type="text" name="query" class="form-control input-index text-center" style="vertical-align: baseline" placeholder="What are you looking for?">
-          <button type="submit" class="search-button">
-            <i class="fa fa-search"></i>
-          </button>
+    <div class="col-xs-12 col-md-6 left-index">
+      <div>
+        <form action="/resources" method="get" class="form-inline">
+          <div class="input-group index-search">
+            <input type="text" name="query" class="form-control text-center" placeholder="What are you looking for?" value="<%= params[:query] %>">
+            <span class="input-group-btn index-button">
+              <button type="submit" class="btn btn-default">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
         </form>
-
-        <% if @resources.empty? %>
-          <p class="no-events text-center">Sorry, there are no resources in this category...</p>
-        <% else %>
-          <% @resources.each do |resource| %>
-            <%= render 'shared/card_resource', resource: resource %>
+        <div id="list">
+          <% if @resources.empty? %>
+            <p class="no-events text-center">Sorry, there are no resources in this category...</p>
+          <% else %>
+            <% @resources.each do |resource| %>
+              <%= render 'resources/resource_card', resource: resource %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
-    <div class="col-xs-12 col-md-6">
-      <div id="map" style="width: 100%; height: calc(100vh - 60px);" data-markers="<%= @markers.to_json %>"></div>
+    <div class="col-xs-12 col-md-6 right-index">
+      <div id="map" style="width: 100%; height: calc(100vh - 70px);" data-markers="<%= @markers.to_json %>"></div>
     </div>
   </div>
 </div>
 
 <%= content_for :after_js do %>
   <%= javascript_pack_tag 'map' %>
+
 <% end %>
 

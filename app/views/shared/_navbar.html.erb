@@ -10,14 +10,15 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Add Resource", new_resource_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Add Event", new_event_path , class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Resources", resources_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Events", events_path , class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Gallery", photos_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "About", about_path , class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Profile", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "Add Resource", new_resource_path, :class => current_class?(new_resource_path)  %>
+      <%= link_to "Add Event", new_event_path , :class => current_class?(new_event_path) %>
+      <%= link_to "Resources", resources_path, :class => current_class?(resources_path)  %>
+      <%= link_to "Events", events_path , :class  => current_class?(events_path)  %>
+      <%= link_to "Gallery", photos_path, :class => current_class?(photos_path)  %>
+      <%= link_to "Contact", contact_path, :class  => current_class?(contact_path) %>
+      <%= link_to "About", about_path , :class => current_class?(about_path) %>
+      <%= link_to "Profile", dashboard_path, :class => current_class?(dashboard_path) %>
       <!-- Avatar with dropdown menu -->
 
     <% else %>
@@ -31,10 +32,12 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Resources</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="/gallery">Gallery</a></li>
-        <li><a href="#">About</a></li>
+        <li><%= link_to "Resources", resources_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Events", events_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Gallery", photos_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "About", about_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "Profile", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>
