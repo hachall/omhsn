@@ -18,7 +18,7 @@
             <p class="no-events text-center">Sorry, there are no resources in this category...</p>
           <% else %>
             <% @resources.each do |resource| %>
-              <%= render 'shared/card_resource', resource: resource %>
+              <%= render 'resources/resource_card', resource: resource %>
             <% end %>
           <% end %>
         </div>
@@ -32,4 +32,5 @@
 
 <%= content_for :after_js do %>
   <%= javascript_pack_tag 'map' %>
+
 <% end %>

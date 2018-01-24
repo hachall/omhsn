@@ -6,7 +6,18 @@ const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 51.75, lng: -1.26 });
   const markers = JSON.parse(mapElement.dataset.markers);
-  map.addMarkers(markers);
+  console.log(markers)
+
+  markers.forEach((marker) => {
+    map.addMarker({
+      lat: marker.lat,
+      lng: marker.lng,
+      infoWindow: {
+        content: marker.infowindow
+      }
+    });
+  });
+
   if (markers.length < 1) {
     map.setZoom(2);
   } else if (markers.length === 1) {
@@ -18,3 +29,13 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
 }
 
 
+
+
+//{
+  // var marker = new google.maps.Marker()
+    //const infowindow = new google.maps.InfoWindow({
+      //content: marker.card
+   // });
+    //marker.addEventListener('click', function() {
+     // infowindow.open(map, marker);
+    //});

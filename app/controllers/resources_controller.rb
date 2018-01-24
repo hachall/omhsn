@@ -2,6 +2,7 @@ class ResourcesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   def index
+
     if params[:query]
       @resources = Resource.where.not(latitude: nil, longitude: nil).search(params[:query])
     else
@@ -13,7 +14,7 @@ class ResourcesController < ApplicationController
         lng: resource.longitude,
         name: resource.name,
         infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource}),
-        card: render_to_string(partial: "shared/card_resource", locals: {resource: resource})
+        card: render_to_string(partial: "resources/resource_card", locals: {resource: resource})
       }
     end
   end
@@ -25,6 +26,7 @@ class ResourcesController < ApplicationController
   end
 
   def new
+
     @resource = Resource.new
   end
 
