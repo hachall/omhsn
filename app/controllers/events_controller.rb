@@ -3,11 +3,14 @@ class EventsController < ApplicationController
 
   def index
 
-    @events = Event.where.not(latitude: nil, longitude: nil)
+    @events = Event.where.not(latitude: nil, longitude: nil).order(date: :asc)
     @markers = @events.map do |event|
       {
         lat: event.latitude,
-        lng: event.longitude
+        lng: event.longitude,
+        name: event.name,
+        infowindow: render_to_string(partial: "events/event_infowindow", locals: {event: event}),
+        card: render_to_string(partial: "events/event_card", locals: {event: event})
       }
     end
   end
