@@ -1,10 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 padded-row">
-      <% if current_user.saved_resource?(@resource) %>
-        <%= link_to 'Unsave', saved_resource_path(current_user.save_resource(@resource)), method: :delete, class: 'btn btn-primary btn-positioning' %>
-      <% else  %>
-        <%= link_to 'Save', resource_saved_resources_path(@resource), method: :post, class: 'btn btn-primary btn-positioning' %>
+      <% if user_signed_in? %>
+        <% if current_user.saved_resource?(@resource) %>
+          <%= link_to 'Unsave', saved_resource_path(current_user.save_resource(@resource)), method: :delete, class: 'btn btn-primary btn-positioning' %>
+        <% else  %>
+          <%= link_to 'Save', resource_saved_resources_path(@resource), method: :post, class: 'btn btn-primary btn-positioning' %>
+        <% end %>
       <% end %>
       <div class="edit-delete-showpage-resource pull-right">
         <%= link_to resource_path(@resource), method: :delete do  %>
@@ -34,7 +36,9 @@
           </div>
           <div class="contact">
             <h5>Contact</h5>
-            <p class ="light"><%= @resource.phone_number %></p>
+            <% @resource.contacts.each do |contact|  %>
+            <p class ="light"><%= contact %></p>
+            <% end  %>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ class Resource < ApplicationRecord
   #validates :category, inclusion: {in: CATEGORIES }
 
   after_validation :taglines_into_array
+  after_validation :contacts_into_array
 
   mount_uploader :photo, PhotoUploader
 
@@ -14,9 +15,9 @@ class Resource < ApplicationRecord
   include AlgoliaSearch
 
   algoliasearch do
-    attributes :category, :taglines_as_string, :what_they_do, :about, :address
+    attributes :category, :taglines_as_string, :name, :what_they_do, :about, :address
 
-    searchableAttributes ['category', 'taglines_as_string', 'what_they_do', 'about', 'address']
+    searchableAttributes ['category', 'taglines_as_string', 'name', 'what_they_do', 'about', 'address']
   end
 
   def taglines_into_array
