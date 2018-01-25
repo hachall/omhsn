@@ -28,51 +28,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   }
   const styles = [
     {
-        "featureType": "administrative.country",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.province",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.neighborhood",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "color": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "administrative.land_parcel",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#ff0000"
-            }
-        ]
-    },
-    {
         "featureType": "landscape.natural",
         "elementType": "geometry.fill",
         "stylers": [
@@ -81,24 +36,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
             },
             {
                 "color": "#e0efef"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.natural.landcover",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#ff0000"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.natural.terrain",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#30d9eb"
             }
         ]
     },
@@ -135,9 +72,6 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         "stylers": [
             {
                 "visibility": "on"
-            },
-            {
-                "hue": "#ff0000"
             }
         ]
     },
@@ -167,19 +101,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         "elementType": "geometry.fill",
         "stylers": [
             {
-                "saturation": "0"
-            },
-            {
-                "color": "#37d7e8"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "hue": "#ff0000"
+                "color": "#00a5b7"
             }
         ]
     }
