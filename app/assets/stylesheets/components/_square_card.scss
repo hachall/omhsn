@@ -1,0 +1,36 @@
+.event-square-card {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  border: 0.5px solid #ccc;
+  padding: 25px 10px;
+  border-radius: 2px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.photo-square-card {
+  width: 310px;
+  height: 220px;
+  background-position: center;
+  background-size: cover;
+  vertical-align: middle;
+}
+
+.title-square-card {
+  text-decoration: none;
+  line-style: none;
+  color: rgba(0,0,0,0.7) !important;
+  margin-top: 10px;
+  text-decoration: none !important;
+
+}
+
+.time-square-card {
+  color: #808080 !important;
+}
