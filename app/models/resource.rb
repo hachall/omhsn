@@ -4,8 +4,8 @@ class Resource < ApplicationRecord
   #CATEGORIES = ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Medical Practices', 'Emergency']
   #validates :category, inclusion: {in: CATEGORIES }
 
-  after_validation :taglines_into_array
-  after_validation :contacts_into_array
+  after_validation :taglines_into_array, on: [:create, :update]
+  after_validation :contacts_into_array, on: [:create, :update]
 
   mount_uploader :photo, PhotoUploader
 
