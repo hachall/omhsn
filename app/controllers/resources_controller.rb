@@ -42,6 +42,7 @@ class ResourcesController < ApplicationController
 
   def edit
     @resource = Resource.find(params[:id])
+
   end
 
   def update
@@ -60,7 +61,7 @@ class ResourcesController < ApplicationController
   private
 
   def resource_params
-    params.require(:resource).permit(:name, :website, :address, :phone_number, :email, :what_they_do, :about, :tip, :taglines_as_string, :photo, :photo_cache, :category, :card_description)
+    params.require(:resource).permit(:name, :website, :address, :phone_number, :email, :what_they_do, :about, :tip, :taglines_as_string, :photo, :photo_cache, :category, :card_description, :contacts_as_string)
   end
 
 end

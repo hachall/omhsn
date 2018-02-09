@@ -1,12 +1,18 @@
 <div class="container form-center">
   <%= simple_form_for(@event) do |f| %>
-    <%= f.input :name, placeholder: @event.name %>
-    <%= f.input :date, placeholder: @event.date %>
-    <%= f.input :address, placeholder: @event.address %>
-    <%= f.input :description, placeholder: @event.description %>
-    <%= f.input :card_description, placeholder: @revent.card_description %>
+    <%= f.input :name %>
+    <%= f.input :date %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :card_description %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit %>
   <% end %>
 </div>
+
+
+
+<%= content_for :after_js do %>
+  <%= javascript_pack_tag 'autocomplete' %>
+<% end %>
