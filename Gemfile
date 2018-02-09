@@ -16,7 +16,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-
+gem 'bootsy'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 
