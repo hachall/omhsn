@@ -3,10 +3,9 @@
     <%= f.input :name, placeholder: @resource.name %>
     <%= f.input :website %>
     <%= f.input :address, placeholder: @resource.address %>
-    <%= f.input :contacts_as_string, label: "Contacts (Seperated by ';' - i.e 'Hamish: 1234; Lili: 5678')" %>
-    <%= f.input :email %>
+    <%= f.input :contacts_as_string, as: :bootsy, label: "Contacts (phonenumbers and emails)" %>
     <%= f.input :category, collection: ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Medical Practices', 'Emergency'] %>
-    <%= f.input :what_they_do %>
+    <%= f.input :what_they_do, as: :bootsy %>
     <%= f.input :about %>
     <%= f.input :tip %>
     <%= f.input :taglines_as_string, label: "Taglines (List of words to aid search, seperated by spaces)" %>

@@ -3,4 +3,5 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require lightbox.min
+//= require bootsy
 
