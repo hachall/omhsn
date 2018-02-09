@@ -1,7 +1,7 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: #00a5b7;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -37,13 +37,13 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #0c1215;
+  color: white;
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 1;
 }
 .navbar-wagon-link:hover {
-  opacity: 1;
-  color: #4CCADB;
+  opacity: 0.8;
+  color: white;
   text-decoration: none;
 }
 
