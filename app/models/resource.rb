@@ -22,7 +22,7 @@ class Resource < ApplicationRecord
 
   def taglines_into_array
     if self.taglines_as_string
-      self.taglines = self.taglines_as_string.split(' ')
+      self.taglines = self.taglines_as_string.split(';')
     end
   end
   def contacts_into_array
