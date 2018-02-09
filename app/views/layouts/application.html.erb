@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="OMHSN" content="Oxford Mental Health Support Network">
+    <meta name="OMHN" content="Oxford Mental Health Network">
     <meta property="og:title" content="Helping you find the mental health resources you need.">
-    <meta property="og:image" content="logo.jpg"
+    <meta property="og:image" content="logo_omhn.png"
     <meta property="og:description" content="Helping you find the mental health resources you need.">
-    <meta property="og:site_name" content="OMHSN"/>
+    <meta property="og:site_name" content="OMHN"/>
     <title>OMHSN</title>
-    <%= favicon_link_tag 'logo.jpg' %>
+    <%= favicon_link_tag 'logo_omhn.png' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -16,7 +16,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
+    <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
