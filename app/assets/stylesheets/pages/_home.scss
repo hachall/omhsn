@@ -1,7 +1,6 @@
 .big-logo-home {
   height: 450px;
-  margin: 10px 40px;
-
+  margin: 0 40px;
 }
 .home-small-container {
   width: 600px;
@@ -24,11 +23,16 @@
 }
 
 #title-homepage {
-  color: #4CCADB;
+  color: $light-blue;
   margin-top: 0px;
   margin-bottom: 30px;
-  font-size: 50px;
+  font-size: 60px;
+  letter-spacing: 1px;
+  margin-top: -20px;
+  font: $headings-font-family !important;
+  font-weight: normal;
 }
+
 
 .search-homepage {
   margin-top: 40px;
@@ -53,8 +57,9 @@
 
 .homepage-titles{
   font-size: 30px;
-  color: #4CCADB;
+  color: $light-blue;
   margin: 100px 0px;
+  margin-bottom: 40px;
 }
 
 .category-photo {

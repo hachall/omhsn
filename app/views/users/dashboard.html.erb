@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="about-color text-center profile-title">Your Profile</h1>
+  <h1 class="about-color text-center profile-title">Hello <%= current_user.first_name %> !</h1>
   <div class="profile-banner-content">
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
@@ -14,7 +14,7 @@
             <div role="tabpanel" class="tab-pane active" id="resource">
               <% if @saved_resources.empty? %>
                   <h4 class="text-center"> No saved resources yet!</h4>
-                  <p class="text-center"> <%= cl_image_tag("venue_xn5fho") %> </p>
+                  <p class="text-center photo-profile-logo"> <%= cl_image_tag("venue_xn5fho") %> </p>
                 <% else %>
                 <% @saved_resources.each do |sr| %>
                   <%= render 'shared/card_resource', resource: sr.resource %>
@@ -25,7 +25,7 @@
             <div role="tabpanel" class="tab-pane" id="event">
               <% if @saved_events.empty? %>
                 <h4 class="text-center"> No Saved Events...time to add some!</h4>
-                <p class="text-center"> <%= cl_image_tag("book-event_umsrbj") %> </p>
+                <p class="text-center photo-profile-logo"> <%= cl_image_tag("book-event_umsrbj") %> </p>
               <% else %>
                 <% @saved_events.each do |se| %>
                   <%= render 'shared/card_event', event: se.event %>

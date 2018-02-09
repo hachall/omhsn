@@ -22,6 +22,11 @@
 }
 
 #addPhotoBtn {
+  background-color: $light-blue;
+  border: 0.2px solid $dark-blue;
+  &:hover {
+    background-color: $dark-blue;
+  }
 }
 
 .edit-delete-photo {

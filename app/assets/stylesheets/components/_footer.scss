@@ -1,0 +1,33 @@
+.footer {
+  background: #2C3239;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: #616668;
+  position: static;
+  bottom: 0px;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: #30d9eb;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer-logo img{
+  height: 50px;
+
+}
+.footer-logo a {
+  text-decoration: none;
+  color: gray;
+}

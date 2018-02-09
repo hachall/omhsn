@@ -10,7 +10,9 @@
   padding-top: 20px;
 }
 
-
+.resource-show-map {
+  margin-bottom: 60px;
+}
 .resource-details {
   display: flex;
   margin: 40px 0px;
@@ -23,18 +25,18 @@
   // position: absolute;
   // left: 240px;
   // top: 135px;
-  background-color: #4CCADB;
-  border: 0.5px solid #10a5b9;
+  background-color: $light-blue;
+  border: 0.2px solid $dark-blue;
   &:hover {
-    background-color: #10a5b9;
+    background-color: $dark-blue;
   }
 }
 
 .details-description {
   flex-grow: 1;
 }
-.text-showpage {
-  padding: 30px 100px;
+.event-map-showpage {
+  margin-bottom: 60px;
 }
 
 .showpage-title {
