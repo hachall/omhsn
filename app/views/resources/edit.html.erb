@@ -1,19 +1,22 @@
-<div class="container form-center">
+<div class="container form-center resource-form">
   <%= simple_form_for(@resource) do |f| %>
     <%= f.input :name, placeholder: @resource.name %>
-    <%= f.input :website, placeholder: @resource.website %>
+    <%= f.input :website %>
     <%= f.input :address, placeholder: @resource.address %>
-    <%= f.input :phone_number, placeholder: @resource.phone_number %>
-    <%= f.input :email, placeholder: @resource.email %>
-    <%= f.input :what_they_do, placeholder: @resource.what_they_do %>
-    <%= f.input :about, placeholder: @resource.about %>
-    <%= f.input :tip, placeholder: @resource.tip %>
-    <%= f.input :category, placeholder: @resource.category %>
-    <%= f.input :taglines_as_string, placeholder: @resource.taglines_as_string %>
-    <%= f.input :card_description, placeholder: @resource.card_description %>
-    <%= f.input :photo%>
-    <%= f.input :photo_cache, as: :hidden%>
+    <%= f.input :contacts_as_string, label: "Contacts (Seperated by ';' - i.e 'Hamish: 1234; Lili: 5678')" %>
+    <%= f.input :email %>
+    <%= f.input :category, collection: ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Medical Practices', 'Emergency'] %>
+    <%= f.input :what_they_do %>
+    <%= f.input :about %>
+    <%= f.input :tip %>
+    <%= f.input :taglines_as_string, label: "Taglines (List of words to aid search, seperated by spaces)" %>
+    <%= f.input :card_description, label: "Short Summary" %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <%= f.submit %>
   <% end %>
 </div>
 
+<%= content_for :after_js do %>
+  <%= javascript_pack_tag 'autocomplete' %>
+<% end %>
