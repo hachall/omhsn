@@ -234,7 +234,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
-  pg
+  pg (~> 0.21)
   pry-byebug
   pry-rails
   puma
@@ -249,7 +249,7 @@ DEPENDENCIES
   webpacker (~> 3.0)
 
 RUBY VERSION
-   ruby 2.3.4p301
+   ruby 2.3.5p376
 
 BUNDLED WITH
    1.16.1

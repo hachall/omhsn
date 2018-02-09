@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby '2.3.4'
+ruby '2.3.5'
 
 gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
-gem 'pg'
+gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1'
 gem 'redis'
