@@ -3,18 +3,18 @@
 }
 
 .btn-color {
-  background-color: #4CCADB;
-  border: 0.5px solid #10a5b9;
+  background-color: $light-blue;
+  border: 0.2px solid $dark-blue;
   &:hover {
-    background-color: #10a5b9;
+    background-color: $dark-blue;
   }
 
 }
 
 .link {
-  color: #4CCADB;
+  color: $light-blue;
   &:hover {
-    color: #10a5b9;
+    color: $dark-blue;
   }
 }
 

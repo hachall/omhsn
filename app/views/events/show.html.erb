@@ -37,17 +37,13 @@
       </div>
     </div>
   </div>
-  <div class="text-showpage">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-        <h4 class="bold">Description</h4>
-        <p class="content-space"><%= @event.description  %></p>
-      </div>
-      <div id="map" class="show-map" style="width: 100%; height: 400px;" data-markers="<%= @event_coordinates.to_json %>">
-      </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+      <h4 class="bold">Description</h4>
+      <p class="content-space"><%= @event.description  %></p>
+      <div id="map" class="show-map event-map-showpage" style="width: 100%; height: 400px;" data-markers="<%= @event_coordinates.to_json %>"></div>
     </div>
   </div>
-
 </div>
 
 <%= content_for :after_js do %>
