@@ -6,6 +6,7 @@
 // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -13,7 +14,8 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
-
+@import "bootsy";
 body {
   background-color: white;
+
 }

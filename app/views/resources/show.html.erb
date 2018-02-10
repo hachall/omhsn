@@ -36,9 +36,7 @@
           </div>
           <div class="contact">
             <h5>Contact</h5>
-            <% @resource.contacts.each do |contact|  %>
-            <p class ="light"><%= contact %></p>
-            <% end  %>
+              <p class ="light"><%= @resource.contacts_as_string.html_safe %></p>
           </div>
         </div>
       </div>
@@ -52,7 +50,7 @@
       </div>
       <div>
         <h4 class="bold">What They Do</h4>
-        <p class="content-space"><%= @resource.what_they_do  %></p>
+        <p class="content-space"><%= @resource.what_they_do.html_safe  %></p>
       </div>
       <div>
         <h4 class="bold">OMHSN Tip</h4>
