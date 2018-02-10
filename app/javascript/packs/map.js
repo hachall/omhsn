@@ -14,9 +14,80 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
       lng: marker.lng,
       infoWindow: {
         content: marker.infowindow
+      },
+      opacity: 0.7,
+      click: () => {
+        map.setZoom(14);
+        map.setCenter(marker.lat, marker.lng);
       }
     });
   });
+
+  // add event listner to the hover of card
+  console.log(document.querySelectorAll(".resource-card"))
+  document.querySelectorAll(".resource-card").forEach((card) => {
+    card.addEventListener("mouseover", (event) => {
+      const activeLat = parseFloat(event.target.dataset.lat);
+      const activeLng = parseFloat(event.target.dataset.lng);
+      map.removeMarkers();
+      markers.forEach((marker) => {
+
+        if (marker.lat === activeLat && marker.lng === activeLng) {
+          console.log("active");
+          map.addMarker({
+            lat: marker.lat,
+            lng: marker.lng,
+            infoWindow: {
+              content: marker.infowindow
+            },
+            opacity: 1.0,
+            click: () => {
+              map.setZoom(14);
+              map.setCenter(marker.lat, marker.lng);
+            }
+          });
+        } else {
+          map.addMarker({
+            lat: marker.lat,
+            lng: marker.lng,
+            infoWindow: {
+              content: marker.infowindow
+            },
+            opacity: 0.7,
+            click: () => {
+              map.setZoom(14);
+              map.setCenter(marker.lat, marker.lng);
+            }
+          });
+        }
+      });
+
+    })
+  });
+
+  document.querySelectorAll(".resource-card").forEach((card) => {
+    card.addEventListener("mouseout", (event) => {
+      map.removeMarkers();
+      markers.forEach((marker) => {
+        map.addMarker({
+          lat: marker.lat,
+          lng: marker.lng,
+          infoWindow: {
+            content: marker.infowindow
+          },
+          opacity: 0.5,
+          click: () => {
+            map.setZoom(14);
+            map.setCenter(marker.lat, marker.lng);
+          }
+        });
+      })
+    });
+  });
+
+  // re-render all the makres with opactiy 0.3 excpe thte correcton with opacity 1
+
+
 
   if (markers.length < 1) {
     map.setZoom(2);
@@ -26,6 +97,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   } else {
     map.fitLatLngBounds(markers);
   }
+
   const styles = [
     {
         "featureType": "landscape.natural",

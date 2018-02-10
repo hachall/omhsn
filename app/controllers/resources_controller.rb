@@ -13,8 +13,7 @@ class ResourcesController < ApplicationController
         lat: resource.latitude,
         lng: resource.longitude,
         name: resource.name,
-        infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource}),
-        card: render_to_string(partial: "resources/resource_card", locals: {resource: resource})
+        infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource})
       }
     end
   end
