@@ -11,3 +11,5 @@ public/assets
 /public/packs
 /public/packs-test
 /node_modules
+node_modules/.yarn-integrity
+yarn-error.log
