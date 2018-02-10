@@ -5,8 +5,8 @@
       <div class="photo-square-card" style="background-image: url('<%= cl_image_path = url %>')">
       </div>
       <div >
-        <h3 class="text-center title-square-card"><%= event.name %></h3>
-        <h6 class="text-center time-square-card"><%= event.date.strftime("%A, %b %d,%l:%M %p") %></h6>
+        <p class="text-center title-square-card"><%= event.name %></p>
+        <p class="text-center time-square-card"><%= event.date.strftime("%A, %b %d,%l:%M %p") %></p>
       </div>
     </div>
   <% end %>

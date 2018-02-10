@@ -26,7 +26,7 @@
   </div>
 
 
-  <h3 class="text-center homepage-titles">Browse by top categories</h3>
+  <h3 class="text-center homepage-titles">BROWSE BY TOP CATEGORIES</h3>
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-md-3">
       <div>
@@ -35,7 +35,7 @@
           </div>
         </a>
       </div>
-      <h4 class="category-title text-center">National Health Service</h4>
+      <p class="category-title text-center">National Health Service</p>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-3">
       <div>
@@ -44,7 +44,7 @@
           </div>
         </a>
       </div>
-      <h4 class="category-title text-center">Peer Support Groups</h4>
+      <p class="category-title text-center">Peer Support Groups</p>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-3 ">
       <div>
@@ -54,7 +54,7 @@
         </a>
 
       </div>
-      <h4 class="category-title text-center">Self-Help and Apps</h4>
+      <p class="category-title text-center">Self-Help and Apps</p>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-3">
       <div >
@@ -63,7 +63,7 @@
           </div>
         </a>
       </div>
-      <h4 class="category-title text-center">Helplines</h4>
+      <p class="category-title text-center">Helplines</p>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-3 ">
       <div>
@@ -72,7 +72,7 @@
           </div>
         </a>
       </div>
-      <h4 class="category-title text-center">Students</h4>
+      <p class="category-title text-center">Students</p>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-3 ">
       <div>
@@ -81,7 +81,7 @@
           </div>
         </a>
       </div>
-      <h4 class="category-title text-center">Support Services</h4>
+      <p class="category-title text-center">Support Services</p>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-3 ">
       <div>
@@ -90,14 +90,14 @@
           </div>
         </a>
       </div>
-      <h4 class="category-title text-center">Private Medical Services</h4>
+      <p class="category-title text-center">Private Medical Services</p>
     </div>
 
     <div class="col-xs-12 col-sm-4 col-md-3 emergency">
       <%= link_to emergency_path do %>
         <div class="category-photo" style="background-image: url('<%= cl_image_path 'emergency_icon.png_szdlzs' %>')" data-toggle="tooltip" title="To find a selection of appropriate responses to your emergency, choose the situation description below that is closest to yours by pressing this link." data-placement="bottom">
         </div>
-        <h4 class="category-title text-center">Emergency</h4>
+        <p class="category-title text-center">Emergency</p>
       <% end %>
     </div>
 
@@ -106,7 +106,7 @@
       <div></div>
     <% else %>
       <div class="row">
-        <h3 class="text-center homepage-titles">Events in Oxford near you</h3>
+        <h3 class="text-center homepage-titles">EVENTS IN OXFORD NEAR YOU</h3>
         <% @events[0..2].each do |event| %>
           <div class="col-xs-12 col-sm-4">
             <%= render 'events/event_square_card', event: event %>

@@ -1,11 +1,11 @@
-<div class="card-resource-container">
+<div class="card-resource-container" >
   <%= link_to resource_path(resource) do %>
-    <div class="resource-card align-middle">
+    <div class="resource-card align-middle" data-lat="<%= resource.latitude %>" data-lng="<%= resource.longitude %>">
       <% url = resource.photo.nil? ? 'restore-logo.jpg' : resource.photo %>
       <div class="photo-resource-card" style="background-image: url('<%= cl_image_path = url %>')">
       </div>
       <div class="resource-card-details align-middle">
-        <h3 class="title-resource-card "><%= resource.name %></h3>
+        <p class="title-resource-card "><%= resource.name %></p>
         <p class="content-resource-card "><%= resource.card_description %></p>
       </div>
     </div>

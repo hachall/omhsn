@@ -1,4 +1,9 @@
 .marker-card {
+  color: $black;
+  a {
+    text-decoration: none;
+    color: $black;
+  }
   h2 {
   font-weight: bold;
   margin: 7px 0px;

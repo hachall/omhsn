@@ -1,12 +1,12 @@
 <div class="card-resource-container">
   <%= link_to event_path(event) do %>
-    <div class="resource-card align-middle">
+    <div class="resource-card align-middle" data-lat="<%= event.latitude %>" data-lng="<%= event.longitude %>">
       <% url = event.photo.nil? ? 'restore-logo.jpg' : event.photo %>
       <div class="photo-resource-card" style="background-image: url('<%= cl_image_path = url %>')">
       </div>
       <div class="resource-card-details align-middle">
-        <h3 class="title-resource-card "><%= event.name %></h3>
-        <h6 class="content-resource-card "><%= event.date.strftime("%A, %b %d,%l:%M %p") %></h6>
+        <p class="title-resource-card "><%= event.name %></p>
+        <p class="content-resource-card "><%= event.date.strftime("%A, %b %d,%l:%M %p") %></p>
         <p class="content-resource-card "><%= event.card_description %></p>
       </div>
     </div>
