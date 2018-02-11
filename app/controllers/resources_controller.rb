@@ -9,15 +9,16 @@ class ResourcesController < ApplicationController
       @resources = Resource.order(name: :asc)
     end
 
-    @markers = @resources.where.not(latitude: nil, longitude: nil).map do |resource|
-      {
-        lat: resource.latitude,
-        lng: resource.longitude,
-        name: resource.name,
-        infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource})
-      }
-
-    end
+    unless @resources.empty?
+      @markers = @resources.where.not(latitude: nil, longitude: nil).map do |resource|
+        {
+          lat: resource.latitude,
+          lng: resource.longitude,
+          name: resource.name,
+          infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource})
+        }
+      end
+     end
   end
 
   def show
