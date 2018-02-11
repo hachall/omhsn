@@ -10,7 +10,9 @@ class ResourcesController < ApplicationController
     end
 
     unless @resources.empty?
+
       resources_w_addr = @resources.select {|resource| resource.latitude != nil && resource.latitude != nil}
+
       @markers = resources_w_addr.map do |resource|
         {
           lat: resource.latitude,
@@ -19,7 +21,7 @@ class ResourcesController < ApplicationController
           infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource})
         }
       end
-     end
+    end
   end
 
   def show

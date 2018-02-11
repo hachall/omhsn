@@ -9,7 +9,7 @@
         <% end %>
       <% end %>
       <div class="edit-delete-showpage-resource pull-right">
-        <%= link_to resource_path(@resource), method: :delete do  %>
+        <%= link_to resource_path(@resource), method: :delete, :data => {:confirm => "You Sure?"} do  %>
           <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
         <% end %>
         <%= link_to edit_resource_path(@resource) do  %>
@@ -59,7 +59,7 @@
         <p class="content-space"><%= @resource.what_they_do.html_safe  %></p>
       </div>
       <div>
-        <h4 class="bold">OMHSN Tip</h4>
+        <h4 class="bold">OMHN Tip</h4>
         <p class="content-space"><%= @resource.tip %></p>
       </div>
       <% if @resource.address %>
