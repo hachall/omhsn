@@ -19,7 +19,7 @@ class ResourcesController < ApplicationController
           infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource})
         }
       end
-     end
+    end
   end
 
   def show
