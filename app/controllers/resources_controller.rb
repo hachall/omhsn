@@ -10,7 +10,9 @@ class ResourcesController < ApplicationController
     end
 
     unless @resources.empty?
-      resources_w_addr = @resources.select {|resource| resource.latitude =! nil && resource.longitude =! nil}
+
+      resources_w_addr = @resources.select {|resource| resource.latitude != nil && resource.latitude != nil}
+
       @markers = resources_w_addr.map do |resource|
         {
           lat: resource.latitude,
