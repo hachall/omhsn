@@ -9,7 +9,7 @@ class ResourcesController < ApplicationController
       @resources = Resource.order(name: :asc)
     end
 
-    @markers = @resources.where.not(latitude: nil, longitude: nil) do |resource|
+    @markers = @resources.where.not(latitude: nil, longitude: nil).map do |resource|
       {
         lat: resource.latitude,
         lng: resource.longitude,
