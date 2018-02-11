@@ -4,17 +4,20 @@ class ResourcesController < ApplicationController
   def index
 
     if params[:query]
-      @resources = Resource.where.not(latitude: nil, longitude: nil).search(params[:query])
+      @resources = Resource.search(params[:query])
     else
-      @resources = Resource.where.not(latitude: nil, longitude: nil).order(name: :asc)
+      @resources = Resource.order(name: :asc)
     end
+
     @markers = @resources.map do |resource|
+      if resource.longitude && resource.latitude
       {
         lat: resource.latitude,
         lng: resource.longitude,
         name: resource.name,
         infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource})
       }
+      end
     end
   end
 
