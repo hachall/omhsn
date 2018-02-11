@@ -9,15 +9,14 @@ class ResourcesController < ApplicationController
       @resources = Resource.order(name: :asc)
     end
 
-    @markers = @resources.map do |resource|
-      if resource.longitude && resource.latitude
+    @markers = @resources.where.not(latitude: nil, longitude: nil) do |resource|
       {
         lat: resource.latitude,
         lng: resource.longitude,
         name: resource.name,
         infowindow: render_to_string(partial: "resources/resource_infowindow", locals: {resource: resource})
       }
-      end
+
     end
   end
 
