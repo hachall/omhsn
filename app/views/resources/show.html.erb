@@ -23,26 +23,26 @@
 
       <div class="resource-details">
         <% if @resource.photo %>
-        <div class="photo-showpage" style="background-image: url('<%= cl_image_path @resource.photo %>')">
-        </div>
+          <div class="photo-showpage" style="background-image: url('<%= cl_image_path @resource.photo %>')">
+          </div>
         <% end %>
         <div class="details-description">
           <h1 class="showpage-title"><%= @resource.name %></h1>
           <% if @resource.website %>
-          <div class="website">
-            <h5>Website</h5>
-            <a class ="light" href="<%= @resource.website %>" target="_blank"><%= @resource.website %></a>
-          </div>
+            <div class="website">
+              <h5>Website</h5>
+              <a class ="light" href="<%= @resource.website %>" target="_blank"><%= @resource.website %></a>
+            </div>
           <% end %>
           <% if @resource.address %>
             <div class="address">
               <h5>Address</h5>
               <p class="light"><%= @resource.address %></p>
-          </div>
+            </div>
           <% end %>
           <div class="contact">
             <h5>Contact</h5>
-              <p class ="light"><%= @resource.contacts_as_string.html_safe %></p>
+            <p class ="light"><%= @resource.contacts_as_string.html_safe %></p>
           </div>
         </div>
       </div>
