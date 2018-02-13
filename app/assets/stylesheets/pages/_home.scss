@@ -24,6 +24,7 @@
 
 #title-homepage {
   color: $light-blue;
+  font-family: $headers-font;
   margin-top: 0px;
   margin-bottom: 30px;
   font-size: 60px;
@@ -54,6 +55,8 @@
 }
 
 .homepage-titles{
+  font-family: $headers-font;
+  letter-spacing: 3px;
   font-size: 30px;
   color: $light-blue;
   margin: 100px 0px;
