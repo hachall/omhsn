@@ -1,5 +1,6 @@
 .marker-card {
   color: $black;
+
   a {
     text-decoration: none;
     color: $black;
@@ -17,4 +18,8 @@
 .gm-style-iw {
   top: 18px !important;
   left: 24px !important;
+}
+
+.radius-marker {
+  border-radius: 10px !important;
 }
