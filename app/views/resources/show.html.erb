@@ -40,9 +40,9 @@
               <p class="light"><%= @resource.address %></p>
             </div>
           <% end %>
-          <div class="contact">
+          <div class="contact light">
             <h5>Contact</h5>
-            <p class ="light"><%= @resource.contacts_as_string.html_safe %></p>
+            <%= @resource.contacts_as_string.html_safe %>
           </div>
         </div>
       </div>
@@ -52,15 +52,15 @@
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <div>
         <h4 class="bold">About</h4>
-        <p class="content-space"><%= @resource.about  %></p>
+        <p class="content-space justifying-text"><%= @resource.about  %></p>
       </div>
       <div>
         <h4 class="bold">What They Do</h4>
-        <p class="content-space"><%= @resource.what_they_do.html_safe  %></p>
+        <%= @resource.what_they_do.html_safe %>
       </div>
       <div>
-        <h4 class="bold">OMHN Tip</h4>
-        <p class="content-space"><%= @resource.tip %></p>
+        <h4 class="bold spacing-omhn-tip">OMHN Tip</h4>
+        <p class="content-space justifying-text"><%= @resource.tip %></p>
       </div>
       <% if @resource.address %>
       <div id="map" class="show-map resource-show-map" style="width: 100%; height: 400px;" data-markers="<%= @resource_coordinates.to_json %>">>

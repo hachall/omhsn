@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 
   def index
 
-    @events = Event.where.not(latitude: nil, longitude: nil).order(date: :asc)
+    @events = Event.where.not(latitude: nil, longitude: nil).order(date: :asc).order(date: :asc)
     @markers = @events.map do |event|
       {
         lat: event.latitude,

@@ -1,7 +1,7 @@
 class Resource < ApplicationRecord
   has_many :saved_resources, dependent: :destroy
 
-  #CATEGORIES = ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Medical Practices', 'Emergency']
+  #CATEGORIES = ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Therapy Services', 'Emergency']
   #validates :category, inclusion: {in: CATEGORIES }
 
   after_validation :taglines_into_array, on: [:create, :update]
