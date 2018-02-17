@@ -1,6 +1,6 @@
 <div class="marker-card text-center">
   <%= link_to resource_path(resource) do %>
-    <% url = resource.photo.nil? ? 'andycat.png' : resource.photo %>
+    <% url = resource.photo.url.nil? ? 'andycat.png' : resource.photo %>
     <div class="marker-photo" style="background-image: url('<%= cl_image_path url %>')"></div>
     <h2><%= resource.name %></h2>
     <p><%= resource.address%></p>
