@@ -22,19 +22,20 @@
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
 
       <div class="resource-details">
-        <% if @resource.photo %>
+
+        <% unless @resource.photo.url == nil %>
           <div class="photo-showpage" style="background-image: url('<%= cl_image_path @resource.photo %>')">
           </div>
         <% end %>
         <div class="details-description">
           <h1 class="showpage-title"><%= @resource.name %></h1>
-          <% if @resource.website %>
+          <% if @resource.website == nil %>
             <div class="website">
               <h5>Website</h5>
               <a class ="light" href="<%= @resource.website %>" target="_blank"><%= @resource.website %></a>
             </div>
           <% end %>
-          <% if @resource.address %>
+          <% unless @resource.address == nil %>
             <div class="address">
               <h5>Address</h5>
               <p class="light"><%= @resource.address %></p>
@@ -62,8 +63,8 @@
         <h4 class="bold">OMHN Tip</h4>
         <p class="content-space"><%= @resource.tip %></p>
       </div>
-      <% if @resource.address %>
-      <div id="map" class="show-map resource-show-map" style="width: 100%; height: 400px;" data-markers="<%= @resource_coordinates.to_json %>">>
+      <% unless @resource.longitude == nil %>
+        <div id="map" class="show-map resource-show-map" style="width: 100%; height: 400px;" data-markers="<%= @resource_coordinates.to_json %>">>
       </div>
       <% end %>
     </div>
