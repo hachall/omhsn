@@ -9,12 +9,16 @@
               </div>
             </a>
             <div class="edit-delete-photo">
-              <%= link_to photo_path(photo), method: :delete, :data => {:confirm => "You Sure?"} do  %>
-                <i class="fa admin-fa fa-trash-o icon-photos delete-photo" aria-hidden="true"></i>
+              <% if policy(photo).destroy? %>
+                <%= link_to photo_path(photo), method: :delete, :data => {:confirm => "You Sure?"} do  %>
+                  <i class="fa admin-fa fa-trash-o icon-photos delete-photo" aria-hidden="true"></i>
+                <% end %>
               <% end %>
-              <a href="" data-toggle="modal" data-target="#editModal<%= photo.id %>">
-                <i class="fa admin-fa fa-pencil-square-o icon-photos edit-photo" aria-hidden="true"></i>
-              </a>
+              <% if policy(photo).edit? %>
+                <a href="" data-toggle="modal" data-target="#editModal<%= photo.id %>">
+                  <i class="fa admin-fa fa-pencil-square-o icon-photos edit-photo" aria-hidden="true"></i>
+                </a>
+              <% end %>
             </div>
         </div>
         <%= render "shared/edit_photo_modal", photo: photo %>
@@ -22,13 +26,13 @@
     </div>
   </div>
 
-  <div class="btn-box">
-    <button type="button" class="btn btn-primary btn-sm" id="addPhotoBtn" data-toggle="modal" data-target="#galleryModal">Add a Photo</button>
-  </div>
+  <% if policy(@photos.first).create? %>
+    <div class="btn-box">
+      <button type="button" class="btn btn-primary btn-sm" id="addPhotoBtn" data-toggle="modal" data-target="#galleryModal">Add a Photo</button>
+    </div>
+  <% end %>
 
 </div>
 
 <%= render "shared/upload_photo_modal", photo: @photo %>
-
-
 

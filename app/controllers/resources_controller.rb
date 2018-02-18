@@ -4,9 +4,9 @@ class ResourcesController < ApplicationController
   def index
 
     if params[:query]
-      @resources = Resource.search(params[:query])
+      @resources = policy_scope(Resource).search(params[:query])
     else
-      @resources = Resource.order(name: :asc)
+      @resources = policy_scope(Resource).order(name: :asc)
     end
 
     unless @resources.empty?
@@ -26,6 +26,7 @@ class ResourcesController < ApplicationController
 
   def show
     @resource = Resource.find(params[:id])
+    authorize @resource
     @saved_resource = SavedResource.new
     @resource_coordinates = [{ lat: @resource.latitude, lng: @resource.longitude }]
   end
@@ -33,10 +34,12 @@ class ResourcesController < ApplicationController
   def new
 
     @resource = Resource.new
+    authorize @resource
   end
 
   def create
     @resource = Resource.new(resource_params)
+    authorize @resource
 
     if @resource.save
       redirect_to resource_path(@resource)
@@ -47,17 +50,20 @@ class ResourcesController < ApplicationController
 
   def edit
     @resource = Resource.find(params[:id])
+    authorize @resource
 
   end
 
   def update
     @resource = Resource.find(params[:id])
+    authorize @resource
     @resource.update(resource_params)
     redirect_to resource_path(@resource)
   end
 
   def destroy
     @resource = Resource.find(params[:id])
+    authorize @resource
     @resource.destroy
     redirect_to resources_path
   end
