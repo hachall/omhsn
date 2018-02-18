@@ -10,9 +10,10 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-
-      <%= link_to "Add Resource", new_resource_path, :class => current_class?(new_resource_path)  %>
-      <%= link_to "Add Event", new_event_path , :class => current_class?(new_event_path) %>
+      <% if user_signed_in? && @user.admin %>
+        <%= link_to "Add Resource", new_resource_path, :class => current_class?(new_resource_path)  %>
+        <%= link_to "Add Event", new_event_path , :class => current_class?(new_event_path) %>
+      <% end %>
       <%= link_to "Resources", resources_path, :class => current_class?(resources_path)  %>
       <%= link_to "Events", events_path , :class  => current_class?(events_path)  %>
       <%= link_to "Gallery", photos_path, :class => current_class?(photos_path)  %>
@@ -23,8 +24,10 @@
 
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to "Add Resource", new_resource_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Add Event", new_event_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if user_signed_in? && @user.admin %>
+        <%= link_to "Add Resource", new_resource_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Add Event", new_event_path , class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
       <%= link_to "Resources", resources_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Events", events_path , class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Gallery", photos_path, class: "navbar-wagon-item navbar-wagon-link" %>
