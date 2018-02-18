@@ -3,12 +3,12 @@
     <%= f.input :name %>
     <%= f.input :website %>
     <%= f.input :address %>
-    <%= f.input :contacts_as_string, as: :bootsy, label: "Contacts (phonenumbers and emails)", :input_html => {:rows => 6} %>
-    <%= f.input :category, collection: ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Medical Practices', 'Emergency'] %>
+    <%= f.input :contacts_as_string, as: :bootsy, label: "Contacts (phone numbers and emails)", :input_html => {:rows => 6} %>
+    <%= f.input :category, collection: ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Therapy Services', 'Emergency'] %>
     <%= f.input :what_they_do, as: :bootsy, :input_html => {:rows => 10} %>
     <%= f.input :about, :input_html => {:rows => 7} %>
     <%= f.input :tip %>
-    <%= f.input :taglines_as_string, label: "Taglines (List of words to aid search, seperated by ';')" %>
+    <%= f.input :taglines_as_string, label: "Taglines (List of words to aid search, separated by ';')" %>
     <%= f.input :card_description, label: "Short Summary" %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>

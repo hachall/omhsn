@@ -5,7 +5,7 @@
       <div>
         <div id="list">
           <% if @events.empty? %>
-            <p class="no-events text-center">Sorry, there are no events...</p>
+            <p class="no-events text-center">Sorry, your search returned no results. Try using words that relate to an illness, service or location.</p>
           <% else %>
             <% @events.each do |event| %>
               <%= render 'events/event_card', event: event %>

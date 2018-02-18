@@ -19,7 +19,8 @@
   width: 310px;
   height: 220px;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   vertical-align: middle;
 }
 

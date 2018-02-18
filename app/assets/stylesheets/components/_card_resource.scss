@@ -1,13 +1,14 @@
 .resource-card {
   display: flex;
-  margin: 40px 10px;
+  margin: 10px 10px;
   justify-content: space-between;
   text-align: center;
   align-items: center;
   flex: 1 1 600px;
   border: 0.5px solid #ccc;
-  padding: 25px 10px;
-  border-radius: 2px;
+  padding: 10px 10px;
+  border-radius: 4px;
+  height: 130px;
 }
 
 .card-resource-container a {
@@ -17,10 +18,11 @@
 
 
 .photo-resource-card {
-  width: 310px;
-  height: 220px;
+  width: 300px;
+  height: 120px;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   vertical-align: middle;
 }
 
@@ -52,7 +54,8 @@
     width: 200px;
     height: 100px;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
   .resource-card {
     padding: 10px;
