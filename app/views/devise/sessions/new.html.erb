@@ -1,16 +1,18 @@
 <div class="container login-height">
   <div class="col-xs-12">
     <div class="login-form">
-      <h2>Log in</h2>
+      <h3 class="login-title-devise text-center">LOG IN</h3>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :email, required: false, autofocus: true %>
-          <%= f.input :password, required: false %>
+        <div class="form-group">
+          <label class="login-devise-inputs" for="exampleInputEmail1">EMAIL</label>
+          <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
+          <label class="login-devise-inputs" for="exampleInputPassword">PASSWORD</label>
+          <input type="password" class="form-control " id="exampleInputPassword" aria-describedby="emailHelp">
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in", class: "button-login" %>
+          <%= f.button :submit, "LOG IN", class: "button-login" %>
         </div>
       <% end %>
 

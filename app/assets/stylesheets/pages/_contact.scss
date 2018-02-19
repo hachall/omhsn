@@ -1,26 +1,38 @@
 #contact {
   margin: 100px;
+  height: calc(100vh - 70px);
 }
 
 .btn-color {
-  background-color: $light-blue;
-  border: 0.2px solid $dark-blue;
+  font-family: $headers-font;
+  letter-spacing: 3px;
+  background-color: $dark-blue;
+  border: 0.2px solid #007e8c;
   &:hover {
-    background-color: $dark-blue;
+    background-color: $light-blue;
   }
 
 }
 
 .link {
-  color: $light-blue;
+  color: $dark-blue;
   &:hover {
-    color: $dark-blue;
+    color: $light-blue;
   }
+}
+
+.contact-form-labels {
+  color: $dark-blue;
+  letter-spacing: 4px;
+  font-family: $headers-font;
 }
 
 .contact-title {
   margin-bottom: 50px;
   margin-top: 0px;
+  font-family: $headers-font;
+  letter-spacing: 4px;
+  color: $dark-blue;
 }
 
 @media(max-width: 720px) {

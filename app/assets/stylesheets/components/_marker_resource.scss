@@ -1,5 +1,9 @@
 .marker-card {
   // height: 50px;
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  align-items: center;
   a {
     text-decoration: none;
     color: $black;
@@ -20,10 +24,6 @@
   }
 }
 .gm-style-iw {
-  top: 18px !important;
-  left: 24px !important;
+  justify-content: center;
 }
 
-.radius-marker {
-  border-radius: 10px !important;
-}
