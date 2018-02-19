@@ -49,8 +49,9 @@
   margin-bottom: 25px;
 }
 
-.light {
-  font-weight: lighter;
+.show-page-content {
+  font-family: $body-font;
+  font-size: 13px;
   color: rgba(0,0,0,0.7);
 }
 
@@ -70,17 +71,24 @@
   margin-bottom: 50px;
 }
 
-.bold {
-  font-weight: bold;
-  font-size: 25px;
-  margin-bottom: 30px;
-}
+// .bold {
+//   font-weight: bold;
+//   font-size: 25px;
+//   margin-bottom: 30px;
+// }
 @media(max-width: 720px) {
   .text-showpage {
     padding: 30px 50px;
   }
 }
-.show-page-bigger-title {
+.show-page-title {
   font-family: $franklin-book;
   letter-spacing: 4px;
+}
+.show-page-title-sub {
+  font-size: 17px;
+}
+.show-page-bigger-title {
+  font-size: 20px;
+  margin-bottom: 20px;
 }
