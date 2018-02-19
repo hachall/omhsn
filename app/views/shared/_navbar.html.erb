@@ -1,7 +1,8 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= cl_image_tag "logo_final_omhn_epuxv1" %>
+    <%= cl_image_tag "logo_navbar_n4qah0" %>
+    <%= cl_image_tag "saved-_logo_qvlcoq" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -11,17 +12,17 @@
 
       <!-- Links when logged in -->
       <% if user_signed_in? && current_user.admin %>
-        <%= link_to "Add Resource", new_resource_path, :class => current_class?(new_resource_path)  %>
-        <%= link_to "Add Event", new_event_path , :class => current_class?(new_event_path) %>
+        <%= link_to "ADD RESOURCE", new_resource_path, :class => current_class?(new_resource_path)  %>
+        <%= link_to "ADD EVENT", new_event_path , :class => current_class?(new_event_path) %>
       <% end %>
-      <%= link_to "Resources", resources_path, :class => current_class?(resources_path)  %>
-      <%= link_to "Events", events_path , :class  => current_class?(events_path)  %>
-      <%= link_to "Gallery", photos_path, :class => current_class?(photos_path)  %>
-      <%= link_to "Contact", contact_path, :class  => current_class?(contact_path) %>
-      <%= link_to "About", about_path , :class => current_class?(about_path) %>
-      <%= link_to "Profile", dashboard_path, :class => current_class?(dashboard_path) %>
+      <%= link_to "RESOURCES", resources_path, :class => current_class?(resources_path)  %>
+      <%= link_to "EVENTS", events_path , :class  => current_class?(events_path)  %>
+      <%= link_to "GALLERY", photos_path, :class => current_class?(photos_path)  %>
+      <%= link_to "CONTACT", contact_path, :class  => current_class?(contact_path) %>
+      <%= link_to "ABOUT", about_path , :class => current_class?(about_path) %>
+      <%= link_to "PROFILE", dashboard_path, :class => current_class?(dashboard_path) %>
       <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
-        <%= t(".sign_out", default: "Log out") %>
+        <%= t(".sign_out", default: "LOG OUT") %>
       <% end %>
 
 
@@ -30,16 +31,16 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <% if user_signed_in? && current_user.admin %>
-        <%= link_to "Add Resource", new_resource_path, :class => current_class?(new_resource_path)%>
-        <%= link_to "Add Event", new_event_path , :class => current_class?(new_event_path) %>
+        <%= link_to "ADD RESOURCE", new_resource_path, :class => current_class?(new_resource_path)%>
+        <%= link_to "ADD EVENT", new_event_path , :class => current_class?(new_event_path) %>
       <% end %>
-      <%= link_to "Resources", resources_path, :class => current_class?(resources_path) %>
-      <%= link_to "Events", events_path , :class  => current_class?(events_path) %>
-      <%= link_to "Gallery", photos_path, :class => current_class?(photos_path) %>
-      <%= link_to "Contact", contact_path, :class  => current_class?(contact_path)  %>
-      <%= link_to "About", about_path , :class => current_class?(about_path) %>
-      <%= link_to "Profile", dashboard_path, :class => current_class?(dashboard_path) %>
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "RESOURCES", resources_path, :class => current_class?(resources_path) %>
+      <%= link_to "EVENTS", events_path , :class  => current_class?(events_path) %>
+      <%= link_to "GALLERY", photos_path, :class => current_class?(photos_path) %>
+      <%= link_to "CONTACT", contact_path, :class  => current_class?(contact_path)  %>
+      <%= link_to "ABOUT", about_path , :class => current_class?(about_path) %>
+      <%= link_to "PROFILE", dashboard_path, :class => current_class?(dashboard_path) %>
+      <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
@@ -49,14 +50,14 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Resources", resources_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Events", events_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Gallery", photos_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "About", about_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Profile", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "RESOURCES", resources_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "EVENTS", events_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "GALLERY", photos_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "CONTACT", contact_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "ABOUT", about_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "PROFILE", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li>  <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
-          <%= t(".sign_out", default: "Log out") %>
+          <%= t(".sign_out", default: "LOG OUT") %>
         <% end %></li>
         </ul>
       </div>
@@ -69,12 +70,12 @@
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><%= link_to "Resources", resources_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Events", events_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Gallery", photos_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "About", about_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "Profile", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li>  <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %> </li>
+          <li><%= link_to "EVENTS", events_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "GALLERY", photos_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "CONTACT", contact_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "ABOUT", about_path , class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "PROFILE", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li>  <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %> </li>
         </ul>
       </div>
     </div>

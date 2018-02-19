@@ -1,7 +1,7 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: #00a5b7;
+  background: $black;
   transition: all 0.3s ease;
   height: 70px;
   padding: 0px 30px;
@@ -12,9 +12,16 @@
 
 /* Logo */
 .navbar-wagon-brand img {
-  height: 73px;
+  height: 53px;
 }
 
+.navbar-wagon-brand a {
+  text-decoration: none;
+}
+
+.navbar-text {
+  height: 60px;
+}
 /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
@@ -37,9 +44,12 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: white;
+  color: $dark-blue;
   font-size: 14px;
   opacity: 1;
+  font-family: $headers-font;
+  letter-spacing: 2px;
+
 }
 .navbar-wagon-link:hover {
   opacity: 0.8;
