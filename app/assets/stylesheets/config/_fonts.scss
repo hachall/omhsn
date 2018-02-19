@@ -2,9 +2,11 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700");
 @import url("http://allfont.net/allfont.css?fonts=franklin-gothic-medium");
 @import url("http://www.allfont.es/allfont.css?fonts=franklin-gothic-medium");
+@import url("http://allfont.net/allfont.css?fonts=franklin-gothic-book");
 $body-font: "Montserrat", "Helvetica", "sans-serif";
 $headers-font: "Franklin Gothic Medium", "arial", "300", "sans-serif";
 $franklin: 'Franklin Gothic Medium', "arial", "300", "Regular";
+$franklin-book: 'Franklin Gothic Book', arial;
 
 @font-face {
     font-family: 'Franklin Gothic';
