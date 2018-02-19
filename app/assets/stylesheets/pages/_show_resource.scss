@@ -47,6 +47,7 @@
 
 .showpage-title {
   margin-bottom: 25px;
+  color: $dark-blue;
 }
 
 .show-page-content {
@@ -73,9 +74,9 @@
 
 }
 
-.content-space {
-  margin-bottom: 50px;
-}
+// .content-space {
+//   margin-bottom: 50px;
+// }
 
 // .bold {
 //   font-weight: bold;
@@ -96,5 +97,6 @@
 }
 .show-page-bigger-title {
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
