@@ -25,34 +25,36 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     marker_array.push(m);
   });
 
-
   const container = document.getElementById('list');
-  container.addEventListener("mouseover", (event) => {
-    marker_array.forEach((marker) => {
-      marker.setOpacity(baseOpacity)
-    })
-    const card = event.target.closest('.resource-card');
-    if (card === null) {
-      return
-    }
-    const activeLat = parseFloat(parseFloat(card.dataset.lat).toFixed(7));
-    const activeLng = parseFloat(parseFloat(card.dataset.lng).toFixed(7));
-    let activeMarker = marker_array.find((marker) => {
-      console.log(parseFloat(marker.position.lat().toFixed(7)) === activeLat && parseFloat(marker.position.lng().toFixed(7)) === activeLng)
-      return parseFloat(marker.position.lat().toFixed(7)) === activeLat && parseFloat(marker.position.lng().toFixed(7)) === activeLng;
-    })
-    if (activeMarker === undefined) {
-      console.log(parseFloat(marker_array[0].position.lat().toFixed(7)) === activeLat);
-      console.log(parseFloat(marker_array[0].position.lng().toFixed(7)) === activeLng);
-      console.log(activeMarker);
-      return
-    }
-    console.log("hello")
-    console.log(activeMarker.opacity);
-    activeMarker.setOpacity(activeOpacity);
+  if (container != null) {
 
+    container.addEventListener("mouseover", (event) => {
+      marker_array.forEach((marker) => {
+        marker.setOpacity(baseOpacity)
+      })
+      const card = event.target.closest('.resource-card');
+      if (card === null) {
+        return
+      }
+      const activeLat = parseFloat(parseFloat(card.dataset.lat).toFixed(7));
+      const activeLng = parseFloat(parseFloat(card.dataset.lng).toFixed(7));
+      let activeMarker = marker_array.find((marker) => {
+        console.log(parseFloat(marker.position.lat().toFixed(7)) === activeLat && parseFloat(marker.position.lng().toFixed(7)) === activeLng)
+        return parseFloat(marker.position.lat().toFixed(7)) === activeLat && parseFloat(marker.position.lng().toFixed(7)) === activeLng;
+      })
+      if (activeMarker === undefined) {
+        console.log(parseFloat(marker_array[0].position.lat().toFixed(7)) === activeLat);
+        console.log(parseFloat(marker_array[0].position.lng().toFixed(7)) === activeLng);
+        console.log(activeMarker);
+        return
+      }
+      console.log("hello")
+      console.log(activeMarker.opacity);
+      activeMarker.setOpacity(activeOpacity);
+    });
 
-  });
+  }
+
 
   //         });
   //       } else {
