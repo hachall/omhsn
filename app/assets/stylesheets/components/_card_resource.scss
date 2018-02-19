@@ -32,9 +32,12 @@
 
 .title-resource-card {
   text-decoration: none;
+  font-family: $headers-font;
+  color: $dark-blue;
+  letter-spacing: 3px;
   font-size: 22px;
   line-style: none;
-  color: rgba(0,0,0,0.7);
+  // color: rgba(0,0,0,0.7);
   margin-top: 0px;
   margin-bottom: 2px;
   font-weight: 500;
@@ -49,7 +52,7 @@
 }
 
 .content-resource-card {
-  color: #333333;
+  color: $black;
   font-weight: lighter;
   font-size: 16px;
 }
