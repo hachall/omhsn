@@ -1,6 +1,6 @@
 <div class="card-resource-container" >
   <%= link_to resource_path(resource) do %>
-    <div class="resource-card align-middle" data-lat="<%= resource.latitude %>" data-lng="<%= resource.longitude %>">
+    <div class="resource-card align-middle hovered" data-lat="<%= resource.latitude %>" data-lng="<%= resource.longitude %>">
       <% url = resource.photo.url.nil? ? 'restore-logo.jpg' : resource.photo %>
       <div class="photo-resource-card" style="background-image: url('<%= cl_image_path = url %>')">
       </div>

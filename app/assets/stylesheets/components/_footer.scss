@@ -24,10 +24,16 @@
   opacity: 1;
 }
 .footer-logo img{
-  height: 50px;
+  height: 60px;
 
 }
 .footer-logo a {
   text-decoration: none;
   color: gray;
+}
+.footer-text {
+  font-family: $headers-font;
+  letter-spacing: 3px;
+  color: $dark-blue;
+  font-size: 16px;
 }
