@@ -51,10 +51,16 @@
 
 .show-page-content {
   font-family: $body-font;
-  font-size: 13px;
+  font-size: 16px;
   color: rgba(0,0,0,0.7);
-}
 
+}
+.resource-details li {
+    font-size: 16px;
+}
+.resource-details-second li {
+    font-size: 16px;
+}
 .website a {
   text-decoration: none;
 }
