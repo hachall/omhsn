@@ -56,15 +56,15 @@
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <div>
-        <h4 class="bold">About</h4>
+        <h4 class="bold show-page-bigger-title">ABOUT</h4>
         <p class="content-space justifying-text"><%= @resource.about  %></p>
       </div>
       <div>
-        <h4 class="bold">What They Do</h4>
+        <h4 class="bold show-page-bigger-title">WHAT THEY DO</h4>
         <%= @resource.what_they_do.html_safe %>
       </div>
       <div>
-        <h4 class="bold spacing-omhn-tip">OMHN Tip</h4>
+        <h4 class="bold spacing-omhn-tip show-page-bigger-title">OMHN TIP</h4>
         <p class="content-space justifying-text"><%= @resource.tip %></p>
       </div>
       <% unless @resource.longitude == nil %>
