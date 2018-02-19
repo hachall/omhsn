@@ -2,20 +2,20 @@ class PhotosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
-    @photos = Photo.all
-
+    @photos = policy_scope(Photo).all
     @photo = Photo.new
   end
 
   def create
     @photo = Photo.new(photo_params)
-
+    authorize(@photo)
     @photo.save
     redirect_to photos_path
   end
 
   def destroy
     @photo = Photo.find(params[:id])
+    authroize @photo
     @photo.destroy
     redirect_to photos_path
   end
@@ -26,6 +26,7 @@ class PhotosController < ApplicationController
 
   def update
     @photo = Photo.find(params[:id])
+    authorize @photo
     @photo.update(photo_params)
     redirect_to photos_path
   end

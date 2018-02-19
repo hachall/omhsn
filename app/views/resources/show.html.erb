@@ -9,11 +9,15 @@
         <% end %>
       <% end %>
       <div class="edit-delete-showpage-resource pull-right">
-        <%= link_to resource_path(@resource), method: :delete, :data => {:confirm => "You Sure?"} do  %>
-          <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
+        <% if policy(@resource).destroy? %>
+            <%= link_to resource_path(@resource), method: :delete, :data => {:confirm => "You Sure?"} do  %>
+              <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
+            <% end %>
         <% end %>
-        <%= link_to edit_resource_path(@resource) do  %>
-          <i class="fa admin-fa fa-pencil-square-o icon-showpage" aria-hidden="true"></i>
+        <% if policy(@resource).edit? %>
+            <%= link_to edit_resource_path(@resource) do  %>
+              <i class="fa admin-fa fa-pencil-square-o icon-showpage" aria-hidden="true"></i>
+            <% end %>
         <% end %>
       </div>
     </div>

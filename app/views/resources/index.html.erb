@@ -3,16 +3,31 @@
   <div class="row">
     <div class="col-xs-12 col-md-6 left-index">
       <div>
-        <form action="/resources" method="get" class="form-inline">
-          <div class="input-group index-search">
-            <input type="text" name="query" class="form-control text-center" placeholder="What are you looking for?" value="<%= params[:query] %>">
-            <span class="input-group-btn index-button">
-              <button type="submit" class="btn btn-default">
-                <i class="fa fa-search"></i>
-              </button>
-            </span>
+
+        <div class="search-box">
+
+          <div class="search-bar-index-page">
+            <form action="/resources" method="get" class="form-inline">
+              <div class="input-group index-search" id="index-page-search">
+                <input type="text" name="query" class="form-control text-center" placeholder="What are you looking for?" value="<%= params[:query] %>">
+                <span class="input-group-btn index-button">
+                  <button type="submit" class="btn btn-default">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
           </div>
-        </form>
+
+          <div class="algolia-credit">
+
+              <p class="sponsored-by"> Search powered by</p>
+              <div class="algolia-logo" style="background-image: url('<%= cl_image_path 'algolia-logo-light_a5hz0q' %>')"></div>
+
+          </div>
+
+        </div>
+
         <div id="list">
           <% if @resources.empty? %>
             <p class="no-events text-center">Sorry, your search returned no results. Try using words that relate to an illness, service or location.</p>
@@ -22,6 +37,7 @@
             <% end %>
           <% end %>
         </div>
+
       </div>
     </div>
     <div class="col-xs-12 col-md-6 right-index">
