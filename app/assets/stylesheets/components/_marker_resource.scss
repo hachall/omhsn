@@ -1,17 +1,21 @@
 .marker-card {
-  color: $black;
-
+  // height: 50px;
   a {
     text-decoration: none;
     color: $black;
   }
   h2 {
   font-weight: bold;
-  margin: 7px 0px;
+  font-family: $headers-font;
+  letter-spacing: 3px;
+  color: $dark-blue;
+  margin: 0px 0px;
   font-size: 20px;
   }
   p {
   font-weight: lighter;
+  font-family: $body-font;
+  color: $black;
   margin-bottom: 20px;
   }
 }
