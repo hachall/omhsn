@@ -98,5 +98,11 @@
 .show-page-bigger-title {
   font-size: 20px;
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 25px;
+}
+.show-page-bigger-title:first-child {
+  margin-top: 0px;
+}
+.show-page-bigger-title:last-child {
+  margin-top: 0px;
 }
