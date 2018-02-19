@@ -30,15 +30,15 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <% if user_signed_in? && current_user.admin %>
-        <%= link_to "Add Resource", new_resource_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "Add Event", new_event_path , class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to "Add Resource", new_resource_path, :class => current_class?(new_resource_path)%>
+        <%= link_to "Add Event", new_event_path , :class => current_class?(new_event_path) %>
       <% end %>
-      <%= link_to "Resources", resources_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Events", events_path , class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Gallery", photos_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "About", about_path , class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Profile", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Resources", resources_path, :class => current_class?(resources_path) %>
+      <%= link_to "Events", events_path , :class  => current_class?(events_path) %>
+      <%= link_to "Gallery", photos_path, :class => current_class?(photos_path) %>
+      <%= link_to "Contact", contact_path, :class  => current_class?(contact_path)  %>
+      <%= link_to "About", about_path , :class => current_class?(about_path) %>
+      <%= link_to "Profile", dashboard_path, :class => current_class?(dashboard_path) %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
