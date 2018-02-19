@@ -1,0 +1,31 @@
+.login-height {
+  height: calc(100vh - 70px);
+}
+
+.login-form {
+  margin-top: 100px;
+}
+
+@media(max-width: 720px) {
+  .login-form {
+    padding: 20px;
+  }
+}
+
+.button-login {
+  background-color: $light-blue;
+  color: white;
+  border: 1px $dark-blue;
+  margin-bottom: 20px;
+  &:hover {
+    background-color: $dark-blue;
+    color: white
+  }
+}
+
+.devise-links a {
+  color: $dark-blue;
+  &:hover {
+    opacity: 0.8;
+  }
+}
