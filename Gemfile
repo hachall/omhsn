@@ -3,6 +3,7 @@ ruby '2.3.5'
 
 gem 'devise'
 gem 'figaro'
+gem 'pundit'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'

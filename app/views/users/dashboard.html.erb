@@ -17,7 +17,7 @@
                   <p class="text-center photo-profile-logo"> <%= cl_image_tag("venue_xn5fho") %> </p>
                 <% else %>
                 <% @saved_resources.each do |sr| %>
-                  <%= render 'shared/card_resource', resource: sr.resource %>
+                  <%= render 'resources/resource_card', resource: sr.resource %>
                 <% end %>
               <% end %>
             </div>

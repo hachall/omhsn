@@ -3,7 +3,9 @@ class EventsController < ApplicationController
 
   def index
 
-    @events = Event.where.not(latitude: nil, longitude: nil).order(date: :asc).order(date: :asc)
+    # @events = Event.where.not(latitude: nil, longitude: nil).order(date: :desc)
+    @events = policy_scope(Event).where.not(latitude: nil, longitude: nil).order(date: :desc)
+
     @markers = @events.map do |event|
       {
         lat: event.latitude,
@@ -17,16 +19,19 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    authorize @event
     @event_coordinates = [{ lat: @event.latitude, lng: @event.longitude }]
   end
 
   def new
 
     @event = Event.new
+    authorize @event
   end
 
   def create
     @event = Event.new(event_params)
+    authorize @event
 
     if @event.save
       redirect_to event_path(@event)
@@ -37,16 +42,20 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find(params[:id])
+    authroize @event
   end
 
   def update
     @event = Event.find(params[:id])
+    authorize @event
     @event.update(event_params)
     redirect_to event_path(@event)
+
   end
 
   def destroy
     @event = Event.find(params[:id])
+    authroize @event
     @event.destroy
     redirect_to events_path
   end

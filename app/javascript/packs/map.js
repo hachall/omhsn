@@ -1,4 +1,5 @@
-
+const baseOpacity = 0.7;
+const activeOpacity = 1.0;
 
 import GMaps from 'gmaps/gmaps.js';
 // this is for map stuff required only on specific pages (purpose of the differente packs)
@@ -6,84 +7,92 @@ const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const map = new GMaps({ el: '#map', lat: 51.75, lng: -1.26 });
   const markers = JSON.parse(mapElement.dataset.markers);
-  console.log(markers)
-
+  const marker_array = [];
   markers.forEach((marker) => {
-    map.addMarker({
+    let m = map.createMarker({
       lat: marker.lat,
       lng: marker.lng,
       infoWindow: {
         content: marker.infowindow
       },
-      opacity: 0.7,
+      opacity: baseOpacity,
       click: () => {
         map.setZoom(14);
         map.setCenter(marker.lat, marker.lng);
       }
     });
+    map.addMarker(m);
+    marker_array.push(m);
   });
 
-  // add event listner to the hover of card
-  console.log(document.querySelectorAll(".resource-card"))
-  document.querySelectorAll(".resource-card").forEach((card) => {
-    card.addEventListener("mouseover", (event) => {
-      const activeLat = parseFloat(event.target.dataset.lat);
-      const activeLng = parseFloat(event.target.dataset.lng);
-      map.removeMarkers();
-      markers.forEach((marker) => {
 
-        if (marker.lat === activeLat && marker.lng === activeLng) {
-          console.log("active");
-          map.addMarker({
-            lat: marker.lat,
-            lng: marker.lng,
-            infoWindow: {
-              content: marker.infowindow
-            },
-            opacity: 1.0,
-            click: () => {
-              map.setZoom(14);
-              map.setCenter(marker.lat, marker.lng);
-            }
-          });
-        } else {
-          map.addMarker({
-            lat: marker.lat,
-            lng: marker.lng,
-            infoWindow: {
-              content: marker.infowindow
-            },
-            opacity: 0.7,
-            click: () => {
-              map.setZoom(14);
-              map.setCenter(marker.lat, marker.lng);
-            }
-          });
-        }
-      });
-
+  const container = document.getElementById('list');
+  container.addEventListener("mouseover", (event) => {
+    marker_array.forEach((marker) => {
+      marker.setOpacity(baseOpacity)
     })
+    const card = event.target.closest('.resource-card');
+    if (card === null) {
+      return
+    }
+    const activeLat = parseFloat(parseFloat(card.dataset.lat).toFixed(7));
+    const activeLng = parseFloat(parseFloat(card.dataset.lng).toFixed(7));
+    let activeMarker = marker_array.find((marker) => {
+      console.log(parseFloat(marker.position.lat().toFixed(7)) === activeLat && parseFloat(marker.position.lng().toFixed(7)) === activeLng)
+      return parseFloat(marker.position.lat().toFixed(7)) === activeLat && parseFloat(marker.position.lng().toFixed(7)) === activeLng;
+    })
+    if (activeMarker === undefined) {
+      console.log(parseFloat(marker_array[0].position.lat().toFixed(7)) === activeLat);
+      console.log(parseFloat(marker_array[0].position.lng().toFixed(7)) === activeLng);
+      console.log(activeMarker);
+      return
+    }
+    console.log("hello")
+    console.log(activeMarker.opacity);
+    activeMarker.setOpacity(activeOpacity);
+
+
   });
 
-  document.querySelectorAll(".resource-card").forEach((card) => {
-    card.addEventListener("mouseout", (event) => {
-      map.removeMarkers();
-      markers.forEach((marker) => {
-        map.addMarker({
-          lat: marker.lat,
-          lng: marker.lng,
-          infoWindow: {
-            content: marker.infowindow
-          },
-          opacity: 0.5,
-          click: () => {
-            map.setZoom(14);
-            map.setCenter(marker.lat, marker.lng);
-          }
-        });
-      })
-    });
-  });
+  //         });
+  //       } else {
+  //         map.addMarker({
+  //           lat: marker.lat,
+  //           lng: marker.lng,
+  //           infoWindow: {
+  //             content: marker.infowindow
+  //           },
+  //           opacity: baseOpacity,
+  //           click: () => {
+  //             map.setZoom(14);
+  //             map.setCenter(marker.lat, marker.lng);
+  //           }
+  //         });
+  //       }
+  //     });
+
+  //   })
+  // });
+
+  // document.querySelectorAll(".resource-card").forEach((card) => {
+  //   card.addEventListener("mouseout", (event) => {
+  //     map.removeMarkers();
+  //     markers.forEach((marker) => {
+  //       map.addMarker({
+  //         lat: marker.lat,
+  //         lng: marker.lng,
+  //         infoWindow: {
+  //           content: marker.infowindow
+  //         },
+  //         opacity: baseOpacity,
+  //         click: () => {
+  //           map.setZoom(14);
+  //           map.setCenter(marker.lat, marker.lng);
+  //         }
+  //       });
+  //     })
+  //   });
+  // });
 
   // re-render all the makres with opactiy 0.3 excpe thte correcton with opacity 1
 
