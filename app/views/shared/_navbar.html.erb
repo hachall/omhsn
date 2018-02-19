@@ -15,7 +15,7 @@
 
       <!-- Links when logged in -->
       <% if user_signed_in? && current_user.admin %>
-        <%= link_to "ADD RESOURCE", new_resource_path, cu %>
+        <%= link_to "ADD RESOURCE", new_resource_path, :class => current_class?(new_resource_path) %>
         <%= link_to "ADD EVENT", new_event_path , :class => current_class?(new_event_path) %>
       <% end %>
       <%= link_to "RESOURCES", resources_path, :class => current_class?(resources_path)  %>
