@@ -13,12 +13,19 @@
 /* Logo */
 .navbar-wagon-brand img {
   height: 53px;
+  text-decoration: none !important;
 }
 
 .navbar-wagon-brand a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
+.remove-underline {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  width: 190px;
+}
 .navbar-text {
   height: 60px;
 }
