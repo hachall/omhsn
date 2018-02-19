@@ -1,6 +1,7 @@
 .big-logo-home {
   height: 550px;
   margin: 0 40px;
+  margin-top: 15px;
 }
 .home-small-container {
   width: 600px;
@@ -20,15 +21,14 @@
 
 .homepage-description {
   justify-content: center;
+  margin-top: -15px;
 }
 
 #title-homepage {
   color: $light-blue;
   font-family: $headers-font;
   margin-top: 0px;
-  margin-bottom: 30px;
-  font-size: 60px;
-  letter-spacing: 1px;
+  margin-bottom: 20px;
   margin-top: -20px;
 }
 
@@ -45,6 +45,9 @@
   background-color: #4CCADB;
   border: 1px solid #00C1DB;
 }
+.home-index-search {
+  margin-top: 22px;
+}
 
 .input-homepage {
   width: 90% !important;
@@ -53,14 +56,19 @@
 .search-button {
   height: 39px;
 }
+#home-page-search-bar {
+  width: 450px;
+}
 
 .homepage-titles {
   font-family: $headers-font;
-  letter-spacing: 3px;
+  color: $dark-blue;
+  letter-spacing: 4px;
   font-size: 30px;
-  color: $light-blue;
-  margin: 100px 0px;
-  margin-bottom: 40px;
+}
+#browse-by-title {
+  margin: 80px 0px;
+
 }
 
 .category-photo {
