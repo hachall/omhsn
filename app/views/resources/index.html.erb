@@ -15,7 +15,7 @@
         </form>
         <div id="list">
           <% if @resources.empty? %>
-            <p class="no-events text-center">Sorry, there are no resources in this category...</p>
+            <p class="no-events text-center">Sorry, your search returned no results. Try using words that relate to an illness, service or location.</p>
           <% else %>
             <% @resources.each do |resource| %>
               <%= render 'resources/resource_card', resource: resource %>
