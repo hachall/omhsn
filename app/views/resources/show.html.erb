@@ -39,7 +39,7 @@
               <a class ="light" href="<%= @resource.website %>" target="_blank"><%= @resource.website %></a>
             </div>
           <% end %>
-          <% unless @resource.address == nil %>
+          <% unless @resource.address == nil || @resource.address == "" %>
             <div class="address">
               <h5>Address</h5>
               <p class="light"><%= @resource.address %></p>
