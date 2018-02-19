@@ -1,8 +1,11 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= cl_image_tag "logo_navbar_n4qah0" %>
-    <%= cl_image_tag "saved-_logo_qvlcoq" %>
+    <div class="remove-underline">
+      <%= cl_image_tag "logo_navbar_n4qah0" %>
+      <%= cl_image_tag "saved-_logo_qvlcoq" %>
+    </div>
+
   <% end %>
 
   <!-- Right Navigation -->
@@ -12,7 +15,7 @@
 
       <!-- Links when logged in -->
       <% if user_signed_in? && current_user.admin %>
-        <%= link_to "ADD RESOURCE", new_resource_path, :class => current_class?(new_resource_path)  %>
+        <%= link_to "ADD RESOURCE", new_resource_path, cu %>
         <%= link_to "ADD EVENT", new_event_path , :class => current_class?(new_event_path) %>
       <% end %>
       <%= link_to "RESOURCES", resources_path, :class => current_class?(resources_path)  %>
@@ -21,7 +24,7 @@
       <%= link_to "CONTACT", contact_path, :class  => current_class?(contact_path) %>
       <%= link_to "ABOUT", about_path , :class => current_class?(about_path) %>
       <%= link_to "PROFILE", dashboard_path, :class => current_class?(dashboard_path) %>
-      <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+      <%= link_to destroy_user_session_path, :class => current_class?(destroy_user_session_path), method: :delete do %>
         <%= t(".sign_out", default: "LOG OUT") %>
       <% end %>
 
@@ -40,7 +43,7 @@
       <%= link_to "CONTACT", contact_path, :class  => current_class?(contact_path)  %>
       <%= link_to "ABOUT", about_path , :class => current_class?(about_path) %>
       <%= link_to "PROFILE", dashboard_path, :class => current_class?(dashboard_path) %>
-      <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, :class => current_class?(new_user_session_path)  %>
     <% end %>
   </div>
 
