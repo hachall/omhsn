@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <% if user_signed_in? && @user.admin %>
+      <% if user_signed_in? && current_user.admin %>
         <%= link_to "Add Resource", new_resource_path, :class => current_class?(new_resource_path)  %>
         <%= link_to "Add Event", new_event_path , :class => current_class?(new_event_path) %>
       <% end %>
@@ -24,7 +24,7 @@
 
     <% else %>
       <!-- Login link (when logged out) -->
-      <% if user_signed_in? && @user.admin %>
+      <% if user_signed_in? && current_user.admin %>
         <%= link_to "Add Resource", new_resource_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <%= link_to "Add Event", new_event_path , class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
