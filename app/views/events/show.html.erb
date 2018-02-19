@@ -8,12 +8,17 @@
         <%= link_to 'Save', event_saved_events_path(@event), method: :post, class: 'btn btn-primary btn-positioning' %>
       <% end %>
     <% end %>
+
       <div class="edit-delete-showpage-resource pull-right">
-        <%= link_to event_path(@event), method: :delete do  %>
-          <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
+        <% if policy(@event).destroy? %>
+          <%= link_to event_path(@event), method: :delete do  %>
+            <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
+          <% end %>
         <% end %>
-        <%= link_to edit_event_path(@event) do  %>
-          <i class="fa admin-fa fa-pencil-square-o icon-showpage" aria-hidden="true"></i>
+        <% if policy(@event).edit? %>
+          <%= link_to edit_event_path(@event) do  %>
+            <i class="fa admin-fa fa-pencil-square-o icon-showpage" aria-hidden="true"></i>
+          <% end %>
         <% end %>
       </div>
     </div>
