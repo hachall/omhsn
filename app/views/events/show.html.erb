@@ -30,10 +30,12 @@
         </div>
         <div class="details-description">
           <h1 class="showpage-title"><%= @event.name %></h1>
-          <div class="address">
-            <h5>Address</h5>
-            <p class="light"><%= @event.address %></p>
-          </div>
+          <% unless @event.address == nil || @event.address == "" %>
+            <div class="address">
+              <h5>Address</h5>
+              <p class="light"><%= @event.address %></p>
+            </div>
+          <% end %>
           <div class="contact">
             <h5>Date</h5>
             <p class ="light"><%= @event.date.strftime("%A, %d %b %Y, %l:%M %p") %></p>
