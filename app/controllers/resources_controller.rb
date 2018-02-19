@@ -3,7 +3,9 @@ class ResourcesController < ApplicationController
 
   def index
 
-    if params[:query]
+    if params[:query] == ""
+      @resources = policy_scope(Resource).order(name: :asc)
+    elsif params[:query]
       @resources = policy_scope(Resource).search(params[:query])
     else
       @resources = policy_scope(Resource).order(name: :asc)
