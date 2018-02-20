@@ -29,15 +29,15 @@
         <div class="photo-showpage" style="background-image: url('<%= cl_image_path @event.photo %>')">
         </div>
         <div class="details-description">
-          <h1 class="showpage-title"><%= @event.name %></h1>
+          <h1 class="showpage-title main-title-showpage"><%= @event.name %></h1>
           <% unless @event.address == nil || @event.address == "" %>
             <div class="address">
-              <h5>Address</h5>
-              <p class="light"><%= @event.address %></p>
+              <h5 class="show-page-title">ADDRESS</h5>
+              <p class="light " ><%= @event.address %></p>
             </div>
           <% end %>
           <div class="contact">
-            <h5>Date</h5>
+            <h5 class="show-page-title">DATE</h5>
             <p class ="light"><%= @event.date.strftime("%A, %d %b %Y, %l:%M %p") %></p>
           </div>
         </div>
