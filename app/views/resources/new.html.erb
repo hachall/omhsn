@@ -7,7 +7,7 @@
     <%= f.input :category, collection: ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Therapy Services', 'Emergency'] %>
     <%= f.input :what_they_do, as: :bootsy, :input_html => {:rows => 10} %>
     <%= f.input :about, :input_html => {:rows => 7} %>
-    <%= f.input :tip %>
+    <%= f.input :tip, as: :bootsy %>
     <%= f.input :taglines_as_string, label: "Taglines (List of words to aid search, separated by ';')" %>
     <%= f.input :card_description, label: "Short Summary" %>
     <%= f.input :photo %>
