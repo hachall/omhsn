@@ -1,3 +1,7 @@
+.hovered {
+  background-color: grey;
+}
+
 .resource-card {
   display: flex;
   margin: 10px 10px;
@@ -13,6 +17,9 @@
   margin-bottom: 15px;
   border-radius: 7px;
   height: 130px;
+  &:hover {
+    background-color: rgba(240,240,240,0.8)
+  }
 }
 
 .card-resource-container a {
@@ -68,4 +75,7 @@
   .resource-card {
     padding: 10px;
   }
+}
+.event-card {
+  margin-top: 20px;
 }

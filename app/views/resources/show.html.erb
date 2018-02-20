@@ -32,40 +32,40 @@
           </div>
         <% end %>
         <div class="details-description">
-          <h1 class="showpage-title"><%= @resource.name %></h1>
+          <h1 class="showpage-title showpage-title-sub"><%= @resource.name %></h1>
           <% if @resource.website == nil %>
             <div class="website">
-              <h5>Website</h5>
-              <a class ="light" href="<%= @resource.website %>" target="_blank"><%= @resource.website %></a>
+              <h5 class="showpage-title-sub">WEBSITE</h5>
+              <a class ="show-page-content" href="<%= @resource.website %>" target="_blank"><%= @resource.website %></a>
             </div>
           <% end %>
           <% unless @resource.address == nil || @resource.address == "" %>
             <div class="address">
-              <h5>Address</h5>
-              <p class="light"><%= @resource.address %></p>
+              <h5 class="show-page-title showpage-title-sub">ADDRESS</h5>
+              <p class="show-page-content"><%= @resource.address %></p>
             </div>
           <% end %>
-          <div class="contact light">
-            <h5>Contact</h5>
-            <%= @resource.contacts_as_string.html_safe %>
+          <div class="contact">
+            <h5 class="show-page-title showpage-title-sub">CONTACT</h5>
+            <p class="show-page-content"><%= @resource.contacts_as_string.html_safe %></p>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-      <div>
-        <h4 class="bold">About</h4>
-        <p class="content-space justifying-text"><%= @resource.about  %></p>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 resource-details-second">
+      <div class="show-page-section">
+        <h4 class=" show-page-title show-page-bigger-title">ABOUT</h4>
+        <p class="content-space justifying-text show-page-content"><%= @resource.about  %></p>
       </div>
-      <div>
-        <h4 class="bold">What They Do</h4>
-        <%= @resource.what_they_do.html_safe %>
+      <div class="show-page-section">
+        <h4 class=" show-page-title show-page-bigger-title">WHAT THEY DO</h4>
+        <p class="show-page-content"><%= @resource.what_they_do.html_safe %></p>
       </div>
-      <div>
-        <h4 class="bold spacing-omhn-tip">OMHN Tip</h4>
-        <p class="content-space justifying-text"><%= @resource.tip %></p>
+      <div class="show-page-section">
+        <h4 class=" spacing-omhn-tip show-page-title show-page-bigger-title">OMHN TIP</h4>
+        <p class="content-space justifying-text show-page-content"><%= @resource.tip %></p>
       </div>
       <% unless @resource.longitude == nil %>
         <div id="map" class="show-map resource-show-map" style="width: 100%; height: 400px;" data-markers="<%= @resource_coordinates.to_json %>">>

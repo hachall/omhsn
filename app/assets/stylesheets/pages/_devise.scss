@@ -12,14 +12,23 @@
   }
 }
 
+.login-devise-inputs {
+  font-family: $headers-font;
+  color: $dark-blue;
+  letter-spacing: 4px;
+  margin-top: 15px;
+}
+
 .button-login {
-  background-color: $light-blue;
+  background-color: $dark-blue;
   color: white;
-  border: 1px $dark-blue;
+  border: 1px #007e8c;
   margin-bottom: 20px;
+  letter-spacing: 3px;
+  font-family: $headers-font;
   &:hover {
-    background-color: $dark-blue;
-    color: white
+    background-color: $light-blue;
+    color: white;
   }
 }
 
@@ -28,4 +37,11 @@
   &:hover {
     opacity: 0.8;
   }
+}
+
+.login-title-devise {
+  font-family: $headers-font;
+  color: $dark-blue;
+  letter-spacing: 4px;
+  font-size: 45px;
 }
