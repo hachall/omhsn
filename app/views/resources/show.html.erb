@@ -33,7 +33,7 @@
         <% end %>
         <div class="details-description">
           <h1 class="showpage-title showpage-title-sub main-title-showpage"><%= @resource.name %></h1>
-          <% if @resource.website == nil %>
+          <% unless @resource.website == nil %>
             <div class="website">
               <h5 class="showpage-title-sub">WEBSITE</h5>
               <a class ="show-page-content" href="<%= @resource.website %>" target="_blank"><%= @resource.website %></a>
