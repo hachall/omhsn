@@ -42,12 +42,18 @@
   flex-grow: 1;
 }
 .event-map-showpage {
+  margin-top: 60px;
   margin-bottom: 60px;
 }
 
 .showpage-title {
   margin-bottom: 25px;
   color: $dark-blue;
+  letter-spacing: 4px;
+}
+
+.main-title-showpage {
+  font-size: 30px;
 }
 
 .show-page-content {
@@ -89,13 +95,16 @@
 .show-page-title {
   font-family: $franklin-book;
   letter-spacing: 4px;
+  color: rgb(34, 42, 53) !important;
 }
 .show-page-title-sub {
   font-size: 17px;
+
 }
 .show-page-bigger-title {
   font-size: 20px;
   margin-bottom: 5px;
+
   // margin-top: 25px;
 }
 .show-page-bigger-title:first-child {
