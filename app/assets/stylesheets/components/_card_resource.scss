@@ -2,6 +2,7 @@
 
 .resource-card {
   display: flex;
+  position: relative;
   margin: 10px 10px;
   justify-content: space-between;
   background-color: white;
@@ -85,4 +86,5 @@
 }
 .event-card {
   margin-top: 20px;
+  position: relative;
 }

@@ -1,13 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 padded-row">
-    <% if user_signed_in? %>
-      <% if current_user.saved_event?(@event) %>
-        <%= link_to 'Unsave', saved_event_path(current_user.save_event(@event)), method: :delete, class: 'btn btn-primary btn-positioning' %>
-      <% else  %>
-        <%= link_to 'Save', event_saved_events_path(@event), method: :post, class: 'btn btn-primary btn-positioning' %>
-      <% end %>
-    <% end %>
 
       <div class="edit-delete-showpage-resource pull-right">
         <% if policy(@event).destroy? %>

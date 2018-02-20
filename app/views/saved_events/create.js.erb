@@ -1,0 +1,2 @@
+var bookmarkEventButton = document.getElementById('event-card-<%= @event.id %>')
+bookmarkEventButton.innerHTML = "<%= j render 'shared/save_event_icon', event: @event, user: @user %>"

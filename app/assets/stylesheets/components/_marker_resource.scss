@@ -1,12 +1,6 @@
 .marker-card {
   // height: 50px;
-  display: flex;
 
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-
-  width: 250px;
 
   a {
     text-decoration: none;
@@ -29,7 +23,12 @@
 }
 
 .gm-style-iw {
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+  width: 250px;
 }
 
 
