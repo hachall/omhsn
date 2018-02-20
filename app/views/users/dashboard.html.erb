@@ -5,8 +5,8 @@
       <div class="col-xs-12 col-sm-8 col-sm-offset-2">
         <div>
           <ul class="tab-base profile-tabs" role="tablist">
-            <li role="presentation" class="atab active profile-tabs"><a href="#resource" aria-controls="resource" role="tab" data-toggle="tab">SAVED RESOURCES</a></li>
-            <li role="presentation" class="atab profile-tabs"><a href="#event" aria-controls="event" role="tab" data-toggle="tab">SAVED EVENTS</a></li>
+            <li role="presentation" class="atab active profile-tabs"><a href="#resource" aria-controls="resource" role="tab" data-toggle="tab">BOOKMARKED RESOURCES</a></li>
+            <li role="presentation" class="atab profile-tabs"><a href="#event" aria-controls="event" role="tab" data-toggle="tab">BOOKMARKED EVENTS</a></li>
           </ul>
 
 
@@ -28,7 +28,7 @@
                 <p class="text-center photo-profile-logo"> <%= cl_image_tag("book-event_umsrbj") %> </p>
               <% else %>
                 <% @saved_events.each do |se| %>
-                  <%= render 'shared/card_event', event: se.event %>
+                  <%= render 'events/event_card', event: se.event %>
                 <% end %>
               <% end %>
             </div>

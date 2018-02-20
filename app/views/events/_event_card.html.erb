@@ -1,6 +1,9 @@
 <div class="card-resource-container">
   <%= link_to event_path(event) do %>
     <div class="resource-card event-card align-middle" data-lat="<%= event.latitude %>" data-lng="<%= event.longitude %>">
+      <div class="save-button-event" id="event-card-<%= event.id %>">
+        <%= render "shared/save_event_icon", user: current_user, event: event %>
+      </div>
       <% url = event.photo.nil? ? 'restore-logo.jpg' : event.photo %>
       <div class="photo-resource-card" style="background-image: url('<%= cl_image_path = url %>')">
       </div>
