@@ -75,6 +75,8 @@
 
 }
 
+.blue-tooltip + .tooltip > .tooltip-inner {background-color: $black; border-radius: 6Ppx;}
+
 .category-photo {
   width: 200px;
   height: 200px;
