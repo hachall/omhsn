@@ -1,6 +1,4 @@
-.hovered {
-  background-color: grey;
-}
+
 
 .resource-card {
   display: flex;
@@ -22,11 +20,20 @@
   }
 }
 
+.resource-card-opacity {
+  color: rgba(34, 42, 53, 0.8) !important;
+}
 .card-resource-container a {
   text-decoration: none;
 }
 
+.full-opacity-event-card {
+  color: rgb(34, 42, 53) !important;
+}
 
+.less-opacity-event-card {
+  color: rgba(34, 42, 53, 0.8) !important;
+}
 
 .photo-resource-card {
   width: 300px;

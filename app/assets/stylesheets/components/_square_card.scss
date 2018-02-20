@@ -33,12 +33,14 @@
   text-decoration: none;
   line-style: none;
   font-weight: 500;
-  color: rgba(0,0,0,0.7) !important;
+  color: $dark-blue;
   margin-top: 10px;
   text-decoration: none !important;
+  font-family: $headers-font;
+  letter-spacing: 3px;
 
 }
 
 .time-square-card {
-  color: #808080 !important;
+  color: rgb(34,42,53);
 }
