@@ -61,9 +61,11 @@
         <h4 class=" spacing-omhn-tip show-page-title show-page-bigger-title">OMHN TIP</h4>
         <p class="content-space justifying-text show-page-content"><%= @resource.tip.html_safe %></p>
       </div>
-      <% unless @resource.longitude == nil %>
+      <% if @resource.longitude != nil %>
         <div id="map" class="show-map resource-show-map" style="width: 100%; height: 400px;" data-markers="<%= @resource_coordinates.to_json %>">>
       </div>
+      <% else %>
+        <div class="show-page-blank-div"></div>
       <% end %>
     </div>
   </div>
