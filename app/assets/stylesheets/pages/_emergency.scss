@@ -5,9 +5,23 @@
 
 .emergency-description {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
+  font-family: $body-font;
+  color: $black;
+  text-align: justify;
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+.emergency-type:hover {
+
+    background-color: rgba(240,240,240,0.8)
+
 }
 
+.emergency-type {
+  height: 250px;
+  border-radius: 3px;
+}
 .emergency-type a {
   text-decoration: none;
 }
@@ -17,8 +31,20 @@
   font-weight: lighter;
 }
 
-.emergency-type h4 {
-  color: #4CCADB;
+// .emergency-type h4 {
+//   color: #4CCADB;
+// }
+.emergency-title {
+  font-family: $headers-font;
+  color: $dark-blue;
+  letter-spacing: 2px;
+
+  height: 50px;
+}
+.emergency-paragraph {
+  color: $black;
+  font-family: $body-font;
+  text-align: justify;
 }
 
 .emergency-B {
@@ -64,4 +90,5 @@
 }
 .emergency-page {
   height: calc(100vh - 70px);
+  padding-top: 100px;
 }
