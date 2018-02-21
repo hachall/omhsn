@@ -5,6 +5,9 @@
 .login-form {
   margin-top: 100px;
 }
+.signup-login-form {
+  margin-bottom: 70px;
+}
 
 @media(max-width: 720px) {
   .login-form {
@@ -13,8 +16,8 @@
 }
 
 .login-devise-inputs {
-  font-family: $headers-font;
-  color: $dark-blue;
+  font-family: $franklin-book;
+  color: $black;
   letter-spacing: 4px;
   margin-top: 15px;
 }
