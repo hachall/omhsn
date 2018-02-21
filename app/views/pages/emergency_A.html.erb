@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container emergency-page">
   <div class="row emergency-a">
     <div class="col-xs-12 col-sm-6">
       <h5><strong>Option A: Call 999</strong></h5>
@@ -16,7 +16,7 @@
 
     </div>
     <div class="col-xs-12 col-sm-6">
-      <img class= "map-emergency" src="https://maps.googleapis.com/maps/api/staticmap?center=OX3+7SY&zoom=13&scale=1&size=500x500&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7COX3+7SY" alt="Google Map of OX3 7SY">
+      <img class= "map-emergency" src="https://maps.googleapis.com/maps/api/staticmap?center=OX3+7SY&zoom=13&scale=1&size=500x500&maptype=roadmap&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff0000%7Clabel:1%7COX3+7SY&key=<%=ENV['GOOGLE_API_BROWSER_KEY']%> " alt="Google Map of OX3 7SY">
     </div>
   </div>
 
