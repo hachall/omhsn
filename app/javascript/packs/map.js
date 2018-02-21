@@ -9,18 +9,27 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   const markers = JSON.parse(mapElement.dataset.markers);
   const marker_array = [];
   markers.forEach((marker) => {
-    let m = map.createMarker({
-      lat: marker.lat,
-      lng: marker.lng,
-      infoWindow: {
-        content: marker.infowindow
-      },
-      opacity: baseOpacity,
-      click: () => {
-        map.setZoom(14);
-        map.setCenter(marker.lat, marker.lng);
-      }
-    });
+    let m;
+    if (marker.infowindow !== undefined) {
+      m = map.createMarker({
+        lat: marker.lat,
+        lng: marker.lng,
+        infoWindow: {
+          content: marker.infowindow
+        },
+        opacity: baseOpacity,
+        click: () => {
+          map.setZoom(14);
+          map.setCenter(marker.lat, marker.lng);
+        }
+      });
+    } else {
+      m = map.createMarker({
+        lat: marker.lat,
+        lng: marker.lng,
+        opacity: activeOpacity,
+      });
+    }
     map.addMarker(m);
     marker_array.push(m);
   });
