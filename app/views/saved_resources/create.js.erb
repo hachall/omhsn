@@ -1,2 +1,5 @@
 var bookmarkButton = document.getElementById('resource-card-<%= @resource.id %>');
 bookmarkButton.innerHTML = "<%= j render 'shared/save_resource_icon', resource: @resource, user: @user %>"
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

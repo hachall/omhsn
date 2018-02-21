@@ -1,11 +1,14 @@
 <div class="radius-marker">
-  <div class="marker-card text-center">
+  <div class="marker-card text-center container">
     <%= link_to event_path(event) do %>
-      <% url = event.photo.nil? ? 'andycat.png' : event.photo %>
-      <div class="marker-photo" style="background-image: url('<%= cl_image_path url %>')"></div>
-
-      <h2><%= event.name %></h2>
-      <p><%= event.address%></p>
+      <div class="container-infowindow">
+        <% url = event.photo.nil? ? 'andycat.png' : event.photo %>
+        <div class="marker-photo" style="background-image: url('<%= cl_image_path url %>')"></div>
+        <div class="decription-infowindow">
+          <h2 ><%= event.name %></h2>
+          <p ><%= event.address%></p>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

@@ -6,3 +6,8 @@
 //= require bootsy
 
 
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+

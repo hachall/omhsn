@@ -60,18 +60,11 @@
 
 .icon-save-event {
   color: $black;
-   position: absolute;
-  left: 10px;
-  top: 10px;
   font-size: 25px;
-
 }
 
 .icon-save-resource {
   color: $black;
-  position: absolute;
-  left: 10px;
-  top: 10px;
   font-size: 25px;
 
 }
@@ -94,6 +87,7 @@
 }
 
 .blue-tooltip + .tooltip > .tooltip-inner {background-color: $black; border-radius: 6px;}
+.tooltip-bookmark + .tooltip > .tooltip-inner {background-color: $black; border-radius: 6px; font-size: 10px;}
 
 .category-photo {
   width: 200px;
