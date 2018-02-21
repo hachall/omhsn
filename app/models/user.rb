@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :saved_resources
-  has_many :saved_events
+  has_many :saved_resources, dependent: :destroy
+  has_many :saved_events, dependent: :destroy
   has_many :events, through: :saved_events
   has_many :resources, through: :saved_resources
   validates :first_name, presence: true
