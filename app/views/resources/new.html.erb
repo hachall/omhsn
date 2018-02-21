@@ -6,7 +6,7 @@
     <%= f.input :contacts_as_string, as: :bootsy, label: "Contacts (phone numbers and emails)", :input_html => {:rows => 6}, editor_options: {image: false}  %>
     <%= f.input :category, collection: ['National Health Service', 'Peer Support Groups', 'Self-Help and Apps', 'Helplines', 'Students', 'Support Services', 'Private Therapy Services', 'Emergency'] %>
     <%= f.input :what_they_do, as: :bootsy, :input_html => {:rows => 10}, editor_options: {image: false} %>
-    <%= f.input :about, :input_html => {:rows => 7} %>
+    <%= f.input :about, :input_html => {:rows => 7}, as: :bootsy, editor_options: {image: false}  %>
     <%= f.input :tip, as: :bootsy, editor_options: {image: false}  %>
     <%= f.input :taglines_as_string, label: "Taglines (List of words to aid search, separated by ';')" %>
     <%= f.input :card_description, label: "Short Summary" %>
