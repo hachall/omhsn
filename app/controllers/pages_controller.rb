@@ -28,3 +28,4 @@ class PagesController < ApplicationController
 
 end
 
+
