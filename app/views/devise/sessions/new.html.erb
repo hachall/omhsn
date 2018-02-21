@@ -4,10 +4,10 @@
       <h3 class="login-title-devise text-center">LOG IN</h3>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-group">
-          <label class="login-devise-inputs" for="exampleInputEmail1">EMAIL</label>
+          <label class="login-devise-inputs" name="user[email]" for="exampleInputEmail1">EMAIL</label>
           <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
           <label class="login-devise-inputs" for="exampleInputPassword">PASSWORD</label>
-          <input type="password" class="form-control " id="exampleInputPassword" aria-describedby="emailHelp">
+          <input type="password" class="form-control" name="user[password]" id="exampleInputPassword" aria-describedby="emailHelp">
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
