@@ -1,17 +1,17 @@
 <div class="card-resource-container">
-  <%= link_to event_path(event) do %>
-    <div class="resource-card event-card align-middle" data-lat="<%= event.latitude %>" data-lng="<%= event.longitude %>">
-      <div class="save-button-event" id="event-card-<%= event.id %>">
-        <%= render "shared/save_event_icon", user: current_user, event: event %>
-      </div>
-      <% url = event.photo.nil? ? 'restore-logo.jpg' : event.photo %>
-      <div class="photo-resource-card" style="background-image: url('<%= cl_image_path = url %>')">
-      </div>
-      <div class="resource-card-details align-middle">
-        <p class="title-resource-card "><%= event.name %></p>
-        <p class="content-resource-card full-opacity-event-card"><%= event.date.strftime("%A, %b %d,%l:%M %p") %></p>
-        <p class="content-resource-card less-opacity-event-card"><%= event.card_description %></p>
-      </div>
+
+  <div class="resource-card event-card align-middle" data-lat="<%= event.latitude %>" data-lng="<%= event.longitude %>">
+    <div class="save-button-event" id="event-card-<%= event.id %>">
+      <%= render "shared/save_event_icon", user: current_user, event: event %>
     </div>
-  <% end %>
+    <% url = event.photo.nil? ? 'restore-logo.jpg' : event.photo %>
+    <div class="photo-resource-card" style="background-image: url('<%= cl_image_path = url %>')">
+    </div>
+    <div class="resource-card-details align-middle">
+      <p class="title-resource-card "><%= event.name %></p>
+      <p class="content-resource-card full-opacity-event-card"><%= event.date.strftime("%A, %b %d,%l:%M %p") %></p>
+      <p class="content-resource-card less-opacity-event-card"><%= event.card_description %></p>
+    </div>
+    <%= link_to "", event_path(event), class: "event-card-link" %>
+  </div>
 </div>

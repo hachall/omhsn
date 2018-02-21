@@ -1,12 +1,12 @@
 <% if user.saved_event?(event) %>
 
-    <%= link_to saved_event_path(user.save_event(event)), method: :delete, remote: true, data: { toggle: "tooltip", placement: "top"}, title: "Remove Bookmark", class: "blue-tooltip"  do %>
+    <%= link_to saved_event_path(user.save_event(event)), method: :delete, remote: true, data: { toggle: "tooltip", placement: "bottom"}, title: "Remove Bookmark", class: "tooltip-bookmark"  do %>
       <i class="fa fa-bookmark icon-save-event"></i>
     <% end %>
 
 <% else %>
 
-    <%= link_to event_saved_events_path(event), method: :post, remote: true, data: { toggle: "tooltip", placement: "top"}, title: "Bookmark Event", class: "blue-tooltip" do %>
+    <%= link_to event_saved_events_path(event), method: :post, remote: true, data: { toggle: "tooltip", placement: "bottom"}, title: "Bookmark Event", class: "tooltip-bookmark" do %>
       <i class="fa fa-bookmark-o icon-save-event"></i>
     <% end %>
 

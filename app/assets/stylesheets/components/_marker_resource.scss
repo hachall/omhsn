@@ -1,6 +1,6 @@
 .marker-card {
   // height: 50px;
-
+  width: 100%;
 
   a {
     text-decoration: none;
@@ -12,7 +12,7 @@
   letter-spacing: 3px;
   color: $dark-blue;
   margin: 0px 0px;
-  font-size: 20px;
+  font-size: 18px;
   }
   p {
   font-weight: lighter;
@@ -27,8 +27,20 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-
-  width: 250px;
+  width: 200px !important;
 }
 
+
+.marker-photo {
+  width: 220px;
+}
+
+.no-events {
+  margin-top: 20px;
+}
+
+.decription-infowindow {
+  width: 220px;
+
+}
 

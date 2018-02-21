@@ -1,16 +1,15 @@
 <div class="card-resource-container" >
-  <%= link_to resource_path(resource) do %>
-    <div class="resource-card align-middle hovered" data-lat="<%= resource.latitude %>" data-lng="<%= resource.longitude %>">
-      <div class="save-button-resource" id="resource-card-<%= resource.id %>">
-        <%= render "shared/save_resource_icon", user: current_user, resource: resource %>
-      </div>
-      <% url = resource.photo.url.nil? ? 'restore-logo.jpg' : resource.photo %>
-      <div class="photo-resource-card" style="background-image: url('<%= cl_image_path = url %>')">
-      </div>
-      <div class="resource-card-details align-middle">
-        <p class="title-resource-card "><%= resource.name %></p>
-        <p class="content-resource-card resource-card-opacity"><%= resource.card_description %></p>
-      </div>
+  <div class="resource-card align-middle hovered" data-lat="<%= resource.latitude %>" data-lng="<%= resource.longitude %>">
+    <div class="save-button-resource" id="resource-card-<%= resource.id %>">
+      <%= render "shared/save_resource_icon", user: current_user, resource: resource %>
     </div>
-  <% end %>
+    <% url = resource.photo.url.nil? ? 'restore-logo.jpg' : resource.photo %>
+    <div class="photo-resource-card" style="background-image: url('<%= cl_image_path = url %>')">
+    </div>
+    <div class="resource-card-details align-middle">
+      <p class="title-resource-card "><%= resource.name %></p>
+      <p class="content-resource-card resource-card-opacity"><%= resource.card_description %></p>
+    </div>
+    <%= link_to "", resource_path(resource), class: "resource-card-link" %>
+  </div>
 </div>
