@@ -19,7 +19,7 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
         },
         opacity: baseOpacity,
         click: () => {
-          map.setZoom(10);
+          // map.setZoom(10);
           map.setCenter(marker.lat, marker.lng);
         }
       });
