@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <% if user.saved_event?(event) %>
 
     <%= link_to saved_event_path(user.save_event(event)), method: :delete, remote: true, data: { toggle: "tooltip", placement: "bottom"}, title: "Remove Bookmark", class: "tooltip-bookmark"  do %>
@@ -10,4 +11,5 @@
       <i class="fa fa-bookmark-o icon-save-event"></i>
     <% end %>
 
+<% end %>
 <% end %>
