@@ -9,7 +9,7 @@
     </div>
     <div class="resource-card-details align-middle">
       <p class="title-resource-card "><%= event.name %></p>
-      <p class="content-resource-card full-opacity-event-card"><%= event.date.strftime("%A, %b %d,%l:%M %p") %></p>
+      <p class="content-resource-card full-opacity-event-card"><%= event.date.strftime("%A, %b %d, %l:%M %p") %></p>
       <p class="content-resource-card less-opacity-event-card"><%= event.card_description %></p>
     </div>
     <%= link_to "", event_path(event), class: "event-card-link" %>
