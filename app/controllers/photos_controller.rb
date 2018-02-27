@@ -15,7 +15,7 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id])
-    authroize @photo
+    authorize @photo
     @photo.destroy
     redirect_to photos_path
   end
