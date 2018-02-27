@@ -4,7 +4,7 @@
 
       <div class="edit-delete-showpage-resource pull-right">
         <% if policy(@event).destroy? %>
-          <%= link_to event_path(@event), method: :delete do  %>
+          <%= link_to event_path(@event), method: :delete, :data => {:confirm => "You Sure?"} do  %>
             <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
           <% end %>
         <% end %>
