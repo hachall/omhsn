@@ -4,9 +4,10 @@ class EventsController < ApplicationController
   def index
 
     # @events = Event.where.not(latitude: nil, longitude: nil).order(date: :desc)
-    @events = policy_scope(Event).where.not(latitude: nil, longitude: nil).order(date: :desc)
+    @events = policy_scope(Event).order(date: :asc)
 
-    @markers = @events.map do |event|
+    @events_markers = policy_scope(Event).where.not(latitude: nil, longitude: nil).order(date: :asc)
+    @markers = @events_markers.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
