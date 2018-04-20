@@ -7,7 +7,6 @@ class ResourcesController < ApplicationController
       @resources = policy_scope(Resource).order(name: :asc)
     elsif params[:query]
       @resources = policy_scope(Resource).search(params[:query])
-      # example
     else
       @resources = policy_scope(Resource).order(name: :asc)
     end
