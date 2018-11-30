@@ -11,7 +11,7 @@ class Resource < ApplicationRecord
   validates :category, presence: true
   validates :card_description, presence: true
   after_validation :taglines_into_array, on: [:create, :update]
-  after_validation :contacts_into_array, on: [:create, :update]
+  # after_validation :contacts_into_array, on: [:create, :update]
 
   mount_uploader :photo, PhotoUploader
 
@@ -28,12 +28,12 @@ class Resource < ApplicationRecord
 
   def taglines_into_array
     if self.taglines_as_string
-      self.taglines = self.taglines_as_string.split('; ')
+      self.taglines = self.taglines_as_string.split(';')
     end
   end
   def contacts_into_array
     if self.contacts_as_string
-      self.contacts = self.contacts_as_string.split('; ')
+      self.contacts = self.contacts_as_string.split(';')
     end
   end
 
