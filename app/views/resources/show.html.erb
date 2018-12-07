@@ -5,12 +5,12 @@
       <div class="edit-delete-showpage-resource pull-right">
         <% if policy(@resource).destroy? %>
             <%= link_to resource_path(@resource), method: :delete, :data => {:confirm => "You Sure?"} do  %>
-              <i class="fa admin-fa fa-trash-o icon-showpage" aria-hidden="true"></i>
+              <i class="far admin-fa fa-trash-alt icon-showpage" aria-hidden="true">delete</i>
             <% end %>
         <% end %>
         <% if policy(@resource).edit? %>
             <%= link_to edit_resource_path(@resource) do  %>
-              <i class="fa admin-fa fa-pencil-square-o icon-showpage" aria-hidden="true"></i>
+              <i class="fas admin-fa fa-edit icon-showpage" aria-hidden="true">edit</i>
             <% end %>
         <% end %>
       </div>
