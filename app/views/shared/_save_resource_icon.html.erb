@@ -2,13 +2,13 @@
   <% if user.saved_resource?(resource) %>
     <%# if policy(SavedResource).destroy? %>
       <%= link_to saved_resource_path(user.save_resource(resource)), method: :delete, remote: true, data: { toggle: "tooltip", placement: "bottom"}, title: "Remove Bookmark", class: "tooltip-bookmark"  do %>
-        <i class="fa fa-bookmark icon-save-resource"></i>
+        <i class="fas fa-bookmark icon-save-resource"></i>
       <% end %>
     <%# end %>
   <% else %>
     <%# if policy(SavedResource).create? %>
       <%= link_to resource_saved_resources_path(resource), method: :post, remote: true, data: { toggle: "tooltip", placement: "bottom"}, title: "Bookmark Resource", class: "tooltip-bookmark"  do %>
-        <i class="fa fa-bookmark-o icon-save-resource"></i>
+        <i class="far fa-bookmark icon-save-resource"></i>
       <% end %>
     <%# end %>
   <% end %>
